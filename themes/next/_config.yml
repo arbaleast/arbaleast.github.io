@@ -27,11 +27,11 @@ custom_file_path:
   #sidebar: source/_data/sidebar.swig
   #postMeta: source/_data/post-meta.swig
   #postBodyEnd: source/_data/post-body-end.swig
-  #footer: source/_data/footer.swig
+  footer: source/_data/footer.njk
   #bodyEnd: source/_data/body-end.swig
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -88,7 +88,7 @@ footer:
 creative_commons:
   license: by-nc-sa
   sidebar: false
-  post: false
+  post: true
   language:
 
 
@@ -663,6 +663,14 @@ rating:
 add_this_id:
 
 
+
+utterances:
+  enable: true
+  repo: arbaleast/arbaleast.github.com                                             	# owner/repo
+  issue_term: pathname                                        	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]
+  theme: github-light 						                        # github-light or github-dark
+  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com
+
 # ---------------------------------------------------------------
 # Statistics and Analytics
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
@@ -670,7 +678,7 @@ add_this_id:
 
 # Google Analytics
 google_analytics:
-  tracking_id: # <app_id>
+  tracking_id: G-9KE2TH2BJE  # <app_id>
   # By default, NexT will load an external gtag.js script on your site.
   # If you only need the pageview feature, set the following option to true to get a better performance.
   only_pageview: false
@@ -711,7 +719,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true

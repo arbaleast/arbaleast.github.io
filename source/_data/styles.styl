@@ -1,0 +1,1000 @@
+// 字体颜色
+.post-body {
+    color: #333;
+}
+//引用段落字体
+blockquote {
+    font-family: 'EB Garamond', 'STKaiti', 'KaiTi', 'SimKai', 'Noto Serif SC', sans-serif;
+}
+// 在线编辑图标
+.fa-pencil:before {
+    font-size: 27px;
+}
+// 侧栏按钮样式
+.sidebar-toggle {
+    right: 10px;
+    bottom: 43px;
+    background-color: #048181;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.page-post-detail .sidebar-toggle-line {
+    background: rgb(0, 255, 255);
+}
+// 返回顶部按钮样式
+.back-to-top {
+    line-height: 1.5;
+    right: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #048181;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.back-to-top.back-to-top-on {
+    bottom: 10px;
+}
+// 设置滚动条的样式
+// 参考https://segmentfault.com/a/1190000003708894
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+// 滚动槽
+::-webkit-scrollbar-track {
+    background: rgb(220,220,220);
+}
+// 滚动条滑块
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #999;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(161, 102, 171);
+}
+// 以下为页面顶部设置
+// 页面最顶部的横线
+.headband {
+    height: 1.5px;
+    //background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+	background-image: linear-gradient(to right, #ef4e7b, #aa96da, #facad3);
+}
+// 页面顶部设置
+.header {
+    line-height: 1.5;                   //行高
+    background-image: url('https://api.dujin.org/bing/1920.php');           //背景图片
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: scroll;
+
+}
+// 页面留白更改
+.header-inner {
+    padding-top: 0px;
+    padding-bottom: 40px;
+}
+// 顶栏宽度
+.container .header-inner {
+    width: 100%;
+}
+// 渐变菜带，CSS代码copy自https://githubuniverse.com
+.site-meta {
+    //background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+    //background-image: linear-gradient(to right, #C3543C, #087C8F, #048181);
+}
+
+// 自定义logo(同时去除原有文字)
+.custom-logo-image {
+    background: #fff0;
+	transform: scale(1.6);
+	padding: 32px 5px 16px 5px;
+}
+.custom-logo .site-title {
+    display: none;
+}
+.site-subtitle {
+    display: none;
+}
+// 站点名背景
+.brand{
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 15px;
+    padding: 0px;
+}
+// 站点名字体
+.site-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    line-height: 80px;
+    letter-spacing: 3px;
+}
+// 站点子标题
+.site-subtitle{
+    margin: 0px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 菜单
+.menu {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+// 菜单超链接字体大小
+.menu .menu-item a {
+    font-size: 15px;
+	border-bottom: none !important;
+}
+// 菜单各项边距
+.menu .menu-item {
+    margin: 5px 15px;
+}
+.menu .menu-item .fa {
+    line-height: 22px;
+}
+// 菜单超链接样式
+.menu .menu-item a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom: none !important;
+}
+.menu-item-active a {
+    color: #a166ab;
+}
+// 超链接样式修改
+// 超链接样式
+.post-body a {
+    color: rgb(23, 25, 29);
+    border-bottom: none;
+    &:hover {
+      color: rgb(0, 65, 68);
+      text-decoration: underline;
+    }
+}
+.posts-expand .post-meta a, .post-copyright a {
+    color: rgb(80, 115, 184);
+    border-bottom: none;
+    &:hover {
+      color: rgb(161, 102, 171);
+      text-decoration: underline;
+    }
+}
+a {
+    color: rgb(80, 115, 184);
+    border-bottom-color: rgb(80, 115, 184);
+}
+a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 修复下载按钮超链接样式
+.btn {
+    color: #fff!important;
+	text-decoration: none!important;
+	border: 2px solid #222!important;
+}
+.btn:hover {
+    color: #222!important;
+}
+// 以下为页面页脚设置
+// 页面底部页脚
+.footer {
+    line-height: 1.5;
+    background-color: #f2f2f2;
+    color: #333;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #048181;
+    box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px
+}
+// 以下为页面主体设置
+// 页面背景色
+body {
+	background-color: #eeeff0
+}
+// 页面圆角阴影背景色
+.post-block {
+    background: #fff;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    margin-bottom: 40px;
+}
+// 调整页面上端间距
+.content {
+    padding-top: 60px;
+}
+.posts-expand {
+    padding-top: 0px;
+}
+
+//文章本体与post-meta的间距
+.posts-expand .post-header {
+	font-size: 1.125em;
+	margin-bottom: 10px; 
+	text-align: center;
+}
+
+// 文章标题
+.posts-expand .post-title {
+	color: #333;
+    font-weight: 700;
+    line-height: 1.7;
+    padding: 20px 20px 12px 20px;
+    margin: 0;
+}
+// 文章信息
+.posts-expand .post-meta {
+    margin: 10px;
+    color: #999;
+    font-size: 12px;
+    background-color: #f5f5f5;
+}
+// 文章主体
+.post-body {
+    padding: 0px 40px 0px 40px;
+    text-align: justify;
+    margin: 10px 0 0 0;
+}
+// 文章结束标语
+.end-slogan {
+	margin-top: -24px;
+	margin-bottom: -12px;
+}
+// 版权声明
+.post-copyright {
+    margin: -24px 0px 0px 0px;
+}
+// 文章底部的tags
+.posts-expand .post-tags {
+    //background-color: rgb(255, 255, 255);
+    margin: 0;
+	//padding: 20px 0;
+}
+.posts-expand .post-tags a {
+    border-bottom: none;
+    margin-right: 0px;
+    font-size: 13px;
+    padding: 0px 5px;
+    border-radius: 3px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+.posts-expand .post-tags a:hover {
+    background: #eee;
+}
+// 页面下端页面跳转
+.post-nav {
+    margin: 0;
+	padding: 0 0 10px 0;
+}
+// 主页分割线
+.post-eof {
+    height: 0px;
+    margin: 30px;
+}
+// 主页文章标题
+.posts-expand .post-title-link {
+    color: #333;
+}
+// 文章标题横线动态效果
+.posts-expand .post-title-link::before {
+    background-image: linear-gradient(90deg, #A166AB 0%, #A166AB 25%, #A166AB 50%, #A166AB 75%, #A166AB 100%);
+}
+// 文章内标题样式（左边的竖线）
+.post-body h2, h3, h4, h5, h6 {
+    border-left: 4px solid rgb(161, 102, 171);
+    margin-left: auto;
+    padding-left: 60px;
+}
+.post-body h1, .post-body h2 {
+    border-bottom: 1px solid #eee;
+}
+.post-body h3 {
+    border-bottom: 1px dotted #eee;
+}
+// 修复推荐文章标题显示
+.post-body .note.primary h4 {
+    border-left: none;
+}
+// readmore 按钮
+.post-button {
+    margin-top: 0px;
+}
+.post-button .btn {
+    color: #555 !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    border: none !important;
+    transition-property: unset;
+    padding: 2px 15px;
+    text-align: center;
+    border: 2px solid #4-b3ec;
+    diplay: inline-block;
+    transition: .2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.post-button .btn:hover {
+    color: rgb(255, 255, 255) !important;
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background-image: linear-gradient(to right, #aa96da, #facad3);
+}
+// 文章底部页面跳转
+.post-nav-item a {
+    color: rgb(80, 115, 184);
+    font-weight: bold;
+    padding: 20px;
+}
+.post-nav-item a:hover {
+    color: rgb(161, 102, 171);
+    font-weight: bold;
+}
+// 锚点样式
+.heading-anchor {
+    text-decoration: none!important;
+	color: #999 !important;
+}
+.heading-anchor:hover {
+    text-decoration: none!important;
+	color: #000 !important;
+}
+// 分割线样式
+.post-body hr {
+    //margin: 40px 0 10px 0;
+    height: 3px;
+    border: none;
+	background-image: repeating-linear-gradient(-45deg,#fff,#fff 4px,transparent 4px,transparent 8px);
+    background-color: #ddd;
+    text-align: center;
+}
+// 文章```代码块顶部样式
+.highlight figcaption {
+	font-family: Source Code Pro, consolas, EB Garamond, Noto Serif SC, sans-serif;
+	font-size: 14px;
+	text-align: left;
+}
+// 文章``代码块的自定义样式
+code {
+	margin: 0px 4px;
+	font-size: 80%;
+}
+// 文章```代码块diff样式
+pre .addition {
+    background: none;
+	color: #00aa00;
+	//color: #a6e22e;
+}
+pre .deletion {
+    background: none;
+	color: #aa0000;
+    //color: #f92672;
+}
+// 页面底部页码
+.pagination {
+    border: none;
+    margin-top: 75px;
+}
+.pagination .prev:hover, .pagination .next:hover, .pagination .page-number:hover, .pagination .page-number.current {
+    color: #fff;
+    background: #ccc;
+}
+.pagination .prev, .pagination .next, .pagination .page-number {
+    display: inline-block;
+    margin: 0 8px;
+    width: 20px;
+    height: 40px;
+    line-height: 2.5;
+    border: 0;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    transition-property: background;
+}
+.pagination .space {
+    color: #222;
+}
+// 归档页设定
+.posts-collapse {
+    width: 100%;
+    //margin: 0;
+	background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	border-radius: 0.5rem;
+	//padding: 48px 64px 32px 64px;
+    padding-bottom: 0px; 
+}
+// 去除时间轴色带
+.posts-collapse::before {
+    display: none;
+}
+// 去除小圆点
+.posts-collapse {
+    .collection-year::before {
+        display: none;
+    }
+	.collection-title::before {
+	    display: none;
+	}
+}
+// 时间轴写作时间
+.posts-collapse .post-meta {
+    font-size: 1.2em;
+}
+.collection-year {
+    font-size: 1.2em;
+	.collection-header {
+        margin: 0;
+        text-align: left !important;
+    }
+}
+// 时间轴文章标题左边圆点颜色
+.posts-collapse .post-header:hover::before {
+    background-color: rgb(161, 102, 171);
+}
+// 时间轴文章标题
+.posts-collapse .post-title a {
+    color: rgb(80, 115, 184);
+	font-size: 1.2em;
+	position: relative;
+}
+.posts-collapse .post-title a:hover {
+    color: rgb(161, 102, 171);
+}
+// 时间轴文章标题底部虚线
+.posts-collapse .post-header:hover {
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 年份
+.posts-collapse .collection-year {
+    margin-bottom: 0px;
+	margin-top: 32px;
+}
+// tags 页面分类
+.posts-collapse .collection-header {
+    margin: 0;
+    text-align: center;
+}
+// 以下为侧栏部分修改
+// 侧栏
+.sidebar {
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.sidebar-inner {
+    margin-top: 30px;
+}
+// 侧栏顶部文字
+.sidebar-nav li {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(7, 179, 155);
+}
+.sidebar-nav li:hover {
+    color: rgb(161, 102, 171);
+}
+.sidebar-nav .sidebar-nav-active {
+    color: rgb(7, 179, 155);
+    border-bottom-color: rgb(161, 102, 171);
+    border-bottom-width: 1.5px;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+    color: rgb(7, 179, 155);
+}
+// 侧栏头像
+.site-author-image {
+    border: 2px solid #a166ab;
+}
+// 侧栏站点作者名
+.site-author-name {
+    font-size: 18px;
+}
+// 侧栏站点描述
+.site-description {
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -2px;
+    color: #FC6423;
+}
+// 侧栏站点文章、分类、标签
+.site-state {
+    line-height: 1.3;
+}
+.site-state-item {
+    border-left: 1.5px solid rgb(161, 102, 171) !important;
+}
+.site-state-item:first-child {
+    border-left: none !important;
+}
+// 侧栏RSS按钮样式
+.feed-link {
+    margin-top: 15px;
+}
+.feed-link a {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(158, 158, 158) !important;
+    border-radius: 15px;
+}
+.feed-link a:hover {
+    background-color: rgb(161, 102, 171);
+}
+.feed-link a i {
+    color: rgb(255, 255, 255);
+}
+// 侧栏社交链接
+.links-of-author {
+    margin-top: 8px;
+}
+// 侧栏超链接样式（友链的样式）
+.sidebar a {
+    color: #ccc;
+    border-bottom: none;
+}
+.sidebar a:hover {
+    color: rgb(255, 255, 255);
+}
+// 侧栏目录链接样式
+.post-toc ol a {
+    color: rgb(7, 179, 155);
+    border-bottom: 1px solid rgb(96, 125, 139);
+}
+.post-toc ol a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 侧栏目录链接样式之当前目录
+.post-toc .nav .active > a {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+.post-toc .nav .active > a:hover {
+    color: rgb(161, 102, 171);
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 本地搜索框
+.search-popup .search-icon, .search-popup .popup-btn-close {
+    color: rgb(161,102,171);
+}
+// 调整最大字体
+@media (min-width: 1200px) {
+    .post-body {
+        font-size: 1em;
+    }
+}
+//选中文字样式
+::selection {
+    background-color: rgba(42, 109, 244, 0.25);
+    color: unset;
+}
+.highlight *::selection {
+    background-color: rgba(42, 109, 244, 0.25);
+    color: unset;
+}
+// 以下为移动端样式
+// 移动端左上角菜单按钮
+.site-nav-toggle {
+    top: 35px;
+    left: 10px;
+}
+.btn-bar {
+    background-color: rgb(255, 255, 255);
+}
+@media (max-width: 767px) {
+    .menu {
+        text-align: center;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+    .site-nav {
+        top: initial;
+        background-color: rgba(255, 255, 255, 0.75);
+        border-top: none;
+        border-bottom: none;
+        position: relative;
+        z-index: 1024;
+    }
+}
+// 移动端顶部
+@media (max-width: 767px) {
+    .site-title {
+        font-size: 35px !important;
+        letter-spacing: 0px !important;
+    }
+    .site-subtitle{
+        letter-spacing: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .site-meta {
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+    .menu .menu-item {
+        margin: 0px 10px !important;
+    }
+}
+// 移动端样式
+@media (max-width: 767px) {
+    // 归档页
+    .posts-collapse {
+		padding: 16px 15px 8px 15px;
+		margin: auto;
+		.post-title a {
+		    font-size: 1.125em;
+		}
+		.post-meta {
+		    font-size: 1.125em;
+		}
+	}
+	// 消除页边空白
+	.posts-expand {
+        margin: 0px;
+        padding: 32px 15px 32px 15px;
+    }
+	.post-body {
+        padding: 20px 15px;
+    }
+	.posts-expand .post-title {
+        padding: 45px 15px 12px;
+    }
+	// 页面上部空白
+	.content {
+        padding-top: 35px;
+    }
+	//自定义about彩色标题
+	.about-title {
+	    font-size: 24px !important;
+	}
+	.highlight figcaption {
+	    font-size: 12.25px;
+		text-align: left;
+    }
+	// 在线编辑图标
+    .fa-pencil:before {
+        font-size: 24px;
+    }
+	// 页面下部空白
+	.main-inner {
+        padding-bottom: 35px;
+    }
+	// 页码
+	.pagination {
+        margin-top: 48px;
+    }
+	// 文章标题
+	.posts-expand .post-title {
+        font-size: 24px;
+    }
+	// 文章段落标题竖线
+	.post-body h2, h3, h4, h5, h6 {
+        margin-left: -15px;
+        padding-left: 12px;
+    }
+	// 字体大小
+	.post-body {
+        font-size: 14px !important;
+    }
+	.post-copyright {
+	    font-size: 14px;
+    }
+}
+// 以下为功能设定内容，勿删改
+// 自定义的引用样式
+blockquote.question {
+    color: #555;
+    border-left: 4px solid rgb(16, 152, 173);
+    background-color: rgb(227, 242, 253);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 20px;
+}
+// 自定义的数字块
+span#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+//自定义note标识
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-info {
+    color: #3a87ad;
+    background-color: #e2eaee;
+    border-color: #c5d5dd;
+}
+.alert-warning {
+    color: #c09853;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+//自定义文字背景色块
+span#inline-blue, span#inline-green, span#inline-purple, span#inline-yellow {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    vertical-align: baseline;
+    border-radius: 0;
+    white-space: nowrap;
+}
+span#inline-blue {
+    background-color: #2780e3;
+}
+span#inline-purple {
+    background-color: #9954bb;
+}
+span#inline-yellow {
+    background-color: #f0ad4e;
+}
+span#inline-green {
+    background-color: #5cb85c;
+}
+// 自定义引用边框
+// 左侧
+p#div-border-left-red, p#div-border-left-yellow, p#div-border-left-green, p#div-border-left-blue, p#div-border-left-purple{
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p#div-border-left-red {
+    border-left-width: 5px;
+    border-left-color: #df3e3e;
+}
+p#div-border-left-yellow {
+    border-left-width: 5px;
+    border-left-color: #f0ad4e;
+}
+p#div-border-left-green {
+    border-left-width: 5px;
+    border-left-color: #5cb85c;
+}
+p#div-border-left-blue {
+    border-left-width: 5px;
+    border-left-color: #2780e3;
+}
+p#div-border-left-purple {
+    border-left-width: 5px;
+    border-left-color: #9954bb;
+}
+// 右侧
+p#div-border-right-red, p#div-border-right-yellow, p#div-border-right-green, p#div-border-right-blue, p#div-border-right-purple{
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p#div-border-right-red {
+    border-right-width: 5px;
+    border-right-color: #df3e3e;
+}
+p#div-border-right-yellow {
+    border-right-width: 5px;
+    border-right-color: #f0ad4e;
+}
+p#div-border-right-green {
+    border-right-width: 5px;
+    border-right-color: #5cb85c;
+}
+p#div-border-right-blue {
+    border-right-width: 5px;
+    border-right-color: #2780e3;
+}
+p#div-border-right-purple {
+    border-right-width: 5px;
+    border-right-color: #9954bb;
+}
+// 顶部
+p#div-border-top-red, p#div-border-top-yellow, p#div-border-top-green, p#div-border-top-blue, p#div-border-top-purple {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p#div-border-top-red {
+    border-top-width: 5px;
+    border-top-color: #df3e3e;
+}
+p#div-border-top-yellow {
+    border-top-width: 5px;
+    border-top-color: #f0ad4e;
+}
+p#div-border-top-green {
+    border-top-width: 5px;
+    border-top-color: #5cb85c;
+}
+p#div-border-top-blue {
+    border-top-width: 5px;
+    border-top-color: #2780e3;
+}
+p#div-border-top-purple {
+    border-top-width: 5px;
+    border-top-color: #9954bb;
+}
+// 底部
+p#div-border-bottom-red, p#div-border-bottom-yellow, p#div-border-bottom-green, p#div-border-bottom-blue, p#div-border-bottom-purple {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p#div-border-bottom-red {
+    border-bottom-width: 5px;
+    border-bottom-color: #df3e3e;
+}
+p#div-border-bottom-yellow {
+    border-bottom-width: 5px;
+    border-bottom-color: #f0ad4e;
+}
+p#div-border-bottom-green {
+    border-bottom-width: 5px;
+    border-bottom-color: #5cb85c;
+}
+p#div-border-bottom-blue {
+    border-bottom-width: 5px;
+    border-bottom-color: #2780e3;
+}
+p#div-border-bottom-purple {
+    border-bottom-width: 5px;
+    border-bottom-color: #9954bb;
+}
+// 自定义的网站运营时间样式
+#days {
+    display: block;
+    color: rgb(161, 102, 171);
+    font-size: 16px;
+    margin-top: 15px;
+}
+// 自定义的页脚微信订阅号样式
+.weixin-box {
+    position: absolute;
+    bottom: 43px;
+    left: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.weixin-menu {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    background: url(/images/wechat.svg);
+    background-size: 24px 24px;
+}
+.weixin-hover {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 0px;
+    width: 0px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background: url(/images/wechat-official-accounts.svg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    transition: all 0.35s ease-in-out;
+    z-index: 1024;
+    opacity: 0;
+}
+.weixin-menu:hover .weixin-hover {
+    bottom: 24px;
+    left: 24px;
+    height: 170px;
+    width: 150px;
+    opacity: 1;
+}
+.weixin-description {
+    opacity: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    right: 5%;
+    font-size: 12px;
+    transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.weixin-menu:hover .weixin-description {
+    opacity: 1;
+}
+//about页面自定义彩色字体
+.about-title {
+    text-align: center;
+	font-size: 26px;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative','EB Garamond', "Noto Serif SC", sans-serif;
+    background-image: linear-gradient(to right, #ef4e7b, #aa96da, #facad3);
+	//linear-gradient(90deg,#a166ab 0,#a166ab 40%,#ef4e7b 45%,#f37055 50%,#ef4e7b 55%,#a166ab 60%,#a166ab 100%);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+//十二生肖
+.chinese-zodiac {
+    float: right;
+}
+@font-face {
+  font-family: 'chinese-zodiac';
+  font-display: swap;
+  src: url('/fonts/chinese-zodiac.eot');
+  src: url('/fonts/chinese-zodiac.eot') format('embedded-opentype'),
+       url('/fonts/chinese-zodiac.woff2') format('woff2'),
+       url('/fonts/chinese-zodiac.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.symbolic-animals {
+  display: inline-block;
+  font: normal normal normal 14px/1 chinese-zodiac;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-dragon:before { content: '\e806'; font-size: 35px;}
+.icon-tiger:before { content: '\e809'; font-size: 35px;}
+.icon-pig:before { content: '\e810'; font-size: 35px;}
+.icon-horse:before { content: '\e813'; font-size: 35px;}
+.icon-rat:before { content: '\e816'; font-size: 35px;}
+.icon-goat:before { content: '\e818'; font-size: 35px;}
+.icon-snake:before { content: '\e820'; font-size: 35px;}
+.icon-ox:before { content: '\e822'; font-size: 35px;}
+.icon-dog:before { content: '\e825'; font-size: 35px;}
+.icon-rabbit:before { content: '\e826'; font-size: 35px;}
+.icon-monkey:before { content: '\e829'; font-size: 35px;}
+.icon-rooster:before { content: '\e82f'; font-size: 35px;}
+
+// 字体修改
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel Decorative','EB Garamond', "Noto Serif SC", sans-serif;
+}
+body {
+    font-family: 'EB Garamond', "Noto Serif SC", sans-serif;
+}
+.post-body {
+    font-family: 'EB Garamond', "Noto Serif SC", sans-serif;
+}
+.posts-expand .post-meta {
+    font-family: 'EB Garamond', "Noto Serif SC", sans-serif;
+}
+pre, code {
+    font-family: 'Source Code Pro', consolas, Menlo, "Noto Serif SC", monospace;
+}

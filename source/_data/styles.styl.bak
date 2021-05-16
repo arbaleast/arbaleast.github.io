@@ -1,0 +1,68 @@
+// 背景图
+body {
+   background-image: url('https://api.dujin.org/bing/1920.php');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   background-size: cover;
+   
+   +mobile() {
+     background-size: auto auto;
+  }
+}
+
+.main-inner {
+	width: 60%;
+}
+
+.post-block:first-of-type {
+	padding-top: 0px;
+}
+
+.post-body {
+    position: static;
+    padding-bottom: 40px;
+}
+
+p {
+    padding: 0 0 0 40px;
+}
+.post-block {
+	background-color: #D9D6CF;
+    border-radius: 20px 20px 20px 20px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+    margin: 50px;
+    padding-left: 40px;
+}
+
+.posts-expand .post-title {
+	font-size: 1.5em;
+	font-weight: normal;
+	margin: initial;
+	overflow-wrap: break-word;
+    padding-top: 40px;
+}
+
+.post-footer {
+	display: none ;
+	flex-direction: column;
+	justify-content: center;
+    padding-bottom: 40px;
+}
+
+.header-inner {
+	background-color: #D9D6CF;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+    position: relative
+    bottom: 80px
+    height: 150px
+    width: 1920px
+}
+
+
+.footer {
+    color: #586069;
+    background-color: #D9D6CF;
+	font-size: 0.875em;
+	padding: 20px 0;
+}
