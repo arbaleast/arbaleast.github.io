@@ -1111,11 +1111,6 @@ pre .javascript .function {
   position: fixed;
   top: 0;
 }
-@media (max-width: 991px) {
-  .sidebar {
-    display: none;
-  }
-}
 .sidebar-inner {
   color: #999;
   padding: 18px 10px;
@@ -1168,7 +1163,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #471781;
+  background: #8fdaa7;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1287,7 +1282,6 @@ pre .javascript .function {
   .sidebar-toggle {
     left: 20px;
     opacity: 0.8;
-    display: none;
   }
 }
 .sidebar-toggle:hover .toggle-line {
@@ -2810,7 +2804,7 @@ pre .deletion {
 .btn-bar {
   background-color: #fff;
 }
-@media (max-width: 767px) {
+@media (max-width: 1440px) {
   .menu {
     text-align: center;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
@@ -2824,7 +2818,7 @@ pre .deletion {
     z-index: 1024;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1440px) {
   .site-title {
     font-size: 35px !important;
     letter-spacing: 0px !important;
@@ -2840,7 +2834,7 @@ pre .deletion {
     margin: 0px 10px !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1440px) {
   .posts-collapse {
     padding: 16px 15px 8px 15px;
     margin: auto;
@@ -2854,6 +2848,9 @@ pre .deletion {
   .posts-expand {
     margin: 0px;
     padding: 32px 15px 32px 15px;
+  }
+  .content-wrap {
+    width: 100%;
   }
   .post-body {
     padding: 20px 15px;
