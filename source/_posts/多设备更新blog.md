@@ -1,7 +1,8 @@
 ---
 title: 多设备更新blog
 date: 2021-05-17 08:38:20
-tags: hexo 
+tags: hexo
+description: 探索如何偷懒，躺床上写blog
 ---
 
 ### 创建分支，并上传hexo源码到分支
