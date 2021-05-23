@@ -73,3 +73,25 @@ deploy
 自定义404page
 [Hexo折腾系列（二）自定义404页面](https://blog.luzy.top/posts/456645515/)
 [404模板网站](https://codepen.io/kdbkapsere/pen/oNXLbqQ)
+
+
+---
+###如何隐藏多余的blog
+在博客根目录下运行
+
+    npm install hexo-hide-posts --save
+
+在站点目录下_config.yml
+```
+# hexo-hide-posts
+hide_posts:
+  # 可以改成其他你喜欢的名字
+  filter: hidden
+  # 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见
+  # 常见的位置有：index, tag, category, archive, sitemap, feed, etc.
+  # 留空则默认全部隐藏
+  public_generators: []
+  # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
+  noindex: true
+```
+>然后在blog的属性中添加hidden:true
