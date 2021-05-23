@@ -1163,7 +1163,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7046ff;
+  background: #58b1d4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2310,7 +2310,7 @@ blockquote {
   background: #0ff;
 }
 .back-to-top {
-  line-height: 1.5;
+  line-height: 2.5;
   right: 10px;
   padding-right: 5px;
   padding-left: 5px;
@@ -2351,8 +2351,12 @@ blockquote {
 .header-inner {
   padding-top: 0px;
   padding-bottom: 40px;
+  width: 80%;
 }
 .container .header-inner {
+  width: 100%;
+}
+.site-meta {
   width: 100%;
 }
 .custom-logo-image {
@@ -2449,7 +2453,7 @@ a:hover {
   color: #222 !important;
 }
 .footer {
-  line-height: 1.5;
+  line-height: 120%;
   background-color: #f2f2f2;
   color: #333;
   border-top-width: 3px;
@@ -2466,6 +2470,7 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   border-radius: 0.5rem;
   margin-bottom: 40px;
+  width: 100%;
 }
 .content {
   padding-top: 60px;
@@ -2650,9 +2655,9 @@ pre .deletion {
 .posts-collapse {
   width: 100%;
   background-color: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  border-radius: 0.5rem;
-  padding-bottom: 0px;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  border-radius: 1rem;
+  padding: 48px 64px 32px 64px;
 }
 .posts-collapse::before {
   display: none;
@@ -2686,6 +2691,7 @@ pre .deletion {
 }
 .posts-collapse .post-header:hover {
   border-bottom-color: #a166ab;
+  height: 2px;
 }
 .posts-collapse .collection-year {
   margin-bottom: 0px;
@@ -2834,7 +2840,7 @@ pre .deletion {
     margin: 0px 10px !important;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 767px) {
   .posts-collapse {
     padding: 16px 15px 8px 15px;
     margin: auto;
@@ -2845,12 +2851,19 @@ pre .deletion {
   .posts-collapse .post-meta {
     font-size: 1.125em;
   }
+  .main-inner {
+    padding-bottom: 10px;
+    width: 80%;
+  }
   .posts-expand {
     margin: 0px;
-    padding: 32px 15px 32px 15px;
+    padding: 32px 0px 32px 0px;
   }
   .content-wrap {
     width: 100%;
+    display: block;
+    background: #fff;
+    min-height: 700px;
   }
   .post-body {
     padding: 20px 15px;
@@ -2860,6 +2873,8 @@ pre .deletion {
   }
   .content {
     padding-top: 35px;
+    width: 100%;
+    padding-bottom: 0px;
   }
   .about-title {
     font-size: 24px !important;
