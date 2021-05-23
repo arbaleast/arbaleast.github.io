@@ -243,10 +243,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-17 08:38:20 / Modified: 08:50:53" itemprop="dateCreated datePublished" datetime="2021-05-17T08:38:20+08:00">2021-05-17</time>
+              <time title="Created: 2021-05-17 08:38:20" itemprop="dateCreated datePublished" datetime="2021-05-17T08:38:20+08:00">2021-05-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-23 15:35:51" itemprop="dateModified" datetime="2021-05-23T15:35:51+08:00">2021-05-23</time>
+              </span>
 
           
 
@@ -259,15 +265,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="创建分支，并上传hexo源码到分支"><a href="#创建分支，并上传hexo源码到分支" class="headerlink" title="创建分支，并上传hexo源码到分支"></a>创建分支，并上传hexo源码到分支</h3><p>搭建好githubpage blog 后<br>编辑博客配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:youname/youname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>branch 为部署github page的分支</p>
-</blockquote>
-<h5 id="部署blog"><a href="#部署blog" class="headerlink" title="部署blog"></a>部署blog</h5><p>npm install hexo-deployer-git –save<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
-<h5 id="在hexo根目录下初始化git"><a href="#在hexo根目录下初始化git" class="headerlink" title="在hexo根目录下初始化git"></a>在hexo根目录下初始化git</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init                    #git 初始化</span><br><span class="line">git checkout -b blog        #新建blog分支</span><br><span class="line">git add .                   #添加所有文件到git</span><br><span class="line">git commit -m &quot;&quot;            #提交commit</span><br><span class="line">git push origin blog        #通过origin推送blog到远程仓库</span><br></pre></td></tr></table></figure>
-<h3 id="在其他设备写blog"><a href="#在其他设备写blog" class="headerlink" title="在其他设备写blog"></a>在其他设备写blog</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone -b blog https://github.com/用户名/仓库名.git</span><br><span class="line">cd 仓库名</span><br><span class="line">npm install</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git push origin blog</span><br></pre></td></tr></table></figure>
-
+          <p>探索如何偷懒，躺床上写blog</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/17/%E5%A4%9A%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0blog/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
