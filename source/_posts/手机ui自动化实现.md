@@ -10,7 +10,7 @@ description: 为了薅羊毛， 羊毛党一只（懒）
 [UIAutomator2的使用 ](https://vic.kim/2019/05/20/UIAutomator2%E7%9A%84%E4%BD%BF%E7%94%A8/)
 
 <!--more-->
-###刷视频
+### 刷视频
 ```python
 import uiautomator2 as u2
 import time
@@ -44,7 +44,7 @@ while i < 50:
 ```
 
 
-###mt论坛签到
+### mt论坛签到
 
 ```python
 import uiautomator2 as u2
