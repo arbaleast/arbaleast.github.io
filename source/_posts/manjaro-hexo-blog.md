@@ -76,7 +76,7 @@ deploy
 
 
 ---
-###如何隐藏多余的blog
+### 如何隐藏多余的blog
 在博客根目录下运行
 
     npm install hexo-hide-posts --save
@@ -95,3 +95,9 @@ hide_posts:
   noindex: true
 ```
 >然后在blog的属性中添加hidden:true
+
+---
+### 在页面中嵌入ppt
+[Markdown文件中引入PPT等类似文件](https://www.kancloud.cn/wangyongjieplus/tool/879748)
+
+浏览微软ppt时，它会提供一个嵌入的选项;将里面的iframe代码加入文章就好了
