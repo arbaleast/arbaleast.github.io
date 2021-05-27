@@ -245,10 +245,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-25 16:55:36 / Modified: 17:28:01" itemprop="dateCreated datePublished" datetime="2021-05-25T16:55:36+08:00">2021-05-25</time>
+              <time title="Created: 2021-05-25 16:55:36" itemprop="dateCreated datePublished" datetime="2021-05-25T16:55:36+08:00">2021-05-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-27 22:25:35" itemprop="dateModified" datetime="2021-05-27T22:25:35+08:00">2021-05-27</time>
+              </span>
 
           
 
@@ -261,17 +267,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <script src="/assets/js/DPlayer.min.js"> </script><p>`</p>
-<html>
-    <body>
-        <iframe src="https://social-eudcation.3309839520.workers.dev/GB%2050003-2011%E7%A0%8C%E4%BD%93%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83.pdf" width=900 height=900>
-        This browser does not support PDFs. Please download the PDF to view it: <a href="unix test.pdf">Download PDF</a>
-        </iframe>
-    <p>标签iframe查看pdf</p>
-    </body>
-</html>
-`
-
+          <p>搭积木</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/25/%E7%A0%8C%E4%BD%93%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -393,7 +397,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-24 19:34:57" itemprop="dateModified" datetime="2021-05-24T19:34:57+08:00">2021-05-24</time>
+                <time title="Modified: 2021-05-27 21:07:41" itemprop="dateModified" datetime="2021-05-27T21:07:41+08:00">2021-05-27</time>
               </span>
 
           
@@ -1054,6 +1058,26 @@ setInterval("createtime()",250);
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
