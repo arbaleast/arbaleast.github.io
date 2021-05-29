@@ -24,6 +24,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main rest
 # deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse
 ```
+[Ubuntu Ports 镜像使用帮助-armhf架构](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/)
 >更新ubuntu源和软件
     sudo apt update && sudo apt upgrade
 >安装update-manager-core
