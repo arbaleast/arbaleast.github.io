@@ -26,7 +26,6 @@ vim <your theme path>/layout/_third-party/comments/utterances.swig
     async>
   </script>
 {% endif %}
-
 ```
 
 
