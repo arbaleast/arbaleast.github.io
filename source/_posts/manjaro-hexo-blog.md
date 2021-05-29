@@ -5,7 +5,7 @@ tags:
 description: 个性化hexo
 ---
 
-###添加utterances评论模块
+### 添加utterances评论模块
 >[Use utterances as Hexo Next theme comments](https://huifeng.me/posts/use-utteranc-as-hexo-comments/)
 
 utterance配置
@@ -35,7 +35,7 @@ vim <your theme path>/layout/_third-party/comments/utterances.swig
 
 
 ---
-#在主题的配置文件中启用utterances
+### 在主题的配置文件中启用utterances
 
 填写对应内容
 ```
