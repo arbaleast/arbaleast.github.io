@@ -28,7 +28,7 @@
 <meta property="og:description" content="linux deploy作者好久没更新了，ubuntu还停留在18版">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-29T15:32:07.000Z">
-<meta property="article:modified_time" content="2021-05-29T15:41:07.704Z">
+<meta property="article:modified_time" content="2021-05-29T16:43:59.487Z">
 <meta property="article:author" content="arbaleast">
 <meta property="article:tag" content="linux deploy">
 <meta name="twitter:card" content="summary">
@@ -187,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-29 23:32:07 / Modified: 23:41:07" itemprop="dateCreated datePublished" datetime="2021-05-29T23:32:07+08:00">2021-05-29</time>
+              <time title="Created: 2021-05-29 23:32:07" itemprop="dateCreated datePublished" datetime="2021-05-29T23:32:07+08:00">2021-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-30 00:43:59" itemprop="dateModified" datetime="2021-05-30T00:43:59+08:00">2021-05-30</time>
+              </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -211,15 +217,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/DPlayer.min.js"> </script><h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）"><a href="#换清华源，中科大的有校验问题（估计是源比较旧了）" class="headerlink" title="换清华源，中科大的有校验问题（估计是源比较旧了）"></a>换清华源，中科大的有校验问题（估计是源比较旧了）</h3><blockquote>
-<p>备份/etc/apt/source.list<br>    sudo cp /etc/apt/source.list /etc/apt/source.list.bak<br>替换source.list内容</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>更新ubuntu源和软件<br>    sudo apt update &amp;&amp; sudo apt upgrade<br>安装update-manager-core<br>    sudo apt install -y update-manager-core<br>升级ubutnu到20.04<br>    sudo do-release-upgrade -d<br>检查ubuntu版本</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 20.04.2 LTS</span><br><span class="line">Release:	20.04</span><br><span class="line">Codename:	focal</span><br></pre></td></tr></table></figure>
-<p>搞定！！……又得重新安装软件了</p>
+        <script src="/assets/js/DPlayer.min.js"> </script><h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）"><a href="#换清华源，中科大的有校验问题（估计是源比较旧了）" class="headerlink" title="换清华源，中科大的有校验问题（估计是源比较旧了）"></a>换清华源，中科大的有校验问题（估计是源比较旧了）</h3><h5 id="备份-etc-apt-source-list"><a href="#备份-etc-apt-source-list" class="headerlink" title="备份/etc/apt/source.list"></a>备份/etc/apt/source.list</h5><pre><code>sudo cp /etc/apt/source.list /etc/apt/source.list.bak
+</code></pre>
+<h5 id="替换source-list内容"><a href="#替换source-list内容" class="headerlink" title="替换source.list内容"></a>替换source.list内容</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/">Ubuntu Ports 镜像使用帮助-armhf架构</a></p>
+<h5 id="更新ubuntu源和软件"><a href="#更新ubuntu源和软件" class="headerlink" title="更新ubuntu源和软件"></a>更新ubuntu源和软件</h5><pre><code>sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre>
+<hr>
+<h3 id="安装update-manager-core"><a href="#安装update-manager-core" class="headerlink" title="安装update-manager-core"></a>安装update-manager-core</h3><pre><code>sudo apt install -y update-manager-core
+</code></pre>
+<h3 id="升级ubutnu到20-04"><a href="#升级ubutnu到20-04" class="headerlink" title="升级ubutnu到20.04"></a>升级ubutnu到20.04</h3><pre><code>sudo do-release-upgrade -d
+</code></pre>
+<h3 id="检查ubuntu版本"><a href="#检查ubuntu版本" class="headerlink" title="检查ubuntu版本"></a>检查ubuntu版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 20.04.2 LTS</span><br><span class="line">Release:	20.04</span><br><span class="line">Codename:	focal</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1626603">如何升级到 Ubuntu 20.04</a><br>搞定！！……又得重新安装软件了</p>
 
     </div>
 
@@ -324,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90%EF%BC%8C%E4%B8%AD%E7%A7%91%E5%A4%A7%E7%9A%84%E6%9C%89%E6%A0%A1%E9%AA%8C%E9%97%AE%E9%A2%98%EF%BC%88%E4%BC%B0%E8%AE%A1%E6%98%AF%E6%BA%90%E6%AF%94%E8%BE%83%E6%97%A7%E4%BA%86%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">换清华源，中科大的有校验问题（估计是源比较旧了）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90%EF%BC%8C%E4%B8%AD%E7%A7%91%E5%A4%A7%E7%9A%84%E6%9C%89%E6%A0%A1%E9%AA%8C%E9%97%AE%E9%A2%98%EF%BC%88%E4%BC%B0%E8%AE%A1%E6%98%AF%E6%BA%90%E6%AF%94%E8%BE%83%E6%97%A7%E4%BA%86%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">换清华源，中科大的有校验问题（估计是源比较旧了）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD-etc-apt-source-list"><span class="nav-number">1.0.1.</span> <span class="nav-text">备份&#x2F;etc&#x2F;apt&#x2F;source.list</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2source-list%E5%86%85%E5%AE%B9"><span class="nav-number">1.0.2.</span> <span class="nav-text">替换source.list内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0ubuntu%E6%BA%90%E5%92%8C%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.0.3.</span> <span class="nav-text">更新ubuntu源和软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85update-manager-core"><span class="nav-number">2.</span> <span class="nav-text">安装update-manager-core</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7ubutnu%E5%88%B020-04"><span class="nav-number">3.</span> <span class="nav-text">升级ubutnu到20.04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5ubuntu%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">检查ubuntu版本</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
