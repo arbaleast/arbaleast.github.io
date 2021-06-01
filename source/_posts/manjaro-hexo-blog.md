@@ -100,3 +100,27 @@ hide_posts:
 [Markdown文件中引入PPT等类似文件](https://www.kancloud.cn/wangyongjieplus/tool/879748)
 
 浏览微软ppt时，它会提供一个嵌入的选项;将里面的iframe代码加入文章就好了
+
+
+---
+### 增加本地搜索
+[hexo - Next 主题添加搜索功能](https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/)
+##### 安装插件
+
+    npm install hexo-generator-searchdb --save
+##### 配置博客_config.yml文件
+```
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+```
+##### 配置next主题_config.yml文件
+启用local search
+```
+# Local search
+local_search:
+  enable: true
+```
+    
