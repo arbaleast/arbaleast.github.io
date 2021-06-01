@@ -126,7 +126,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#99;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#99;&#111;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
@@ -189,6 +189,20 @@
       </tags>
   </entry>
   <entry>
+    <title>termux安装uiautomator2</title>
+    <url>/2021/05/30/termux%E5%AE%89%E8%A3%85uiautomator2/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="需要安装些依赖"><a href="#需要安装些依赖" class="headerlink" title="需要安装些依赖"></a>需要安装些依赖</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libxslt libjpeg-turbo</span><br><span class="line">pip3 install libxml2</span><br></pre></td></tr></table></figure>
+<h3 id="安装uiautomator2"><a href="#安装uiautomator2" class="headerlink" title="安装uiautomator2"></a>安装uiautomator2</h3><pre><code>pip3 install uiautomator2
+</code></pre>
+<h3 id="运行python自动化脚本还需要adb"><a href="#运行python自动化脚本还需要adb" class="headerlink" title="运行python自动化脚本还需要adb"></a>运行python自动化脚本还需要adb</h3><pre><code>pkg install -y platform-tool
+</code></pre>
+<p><a href="https://www.52pojie.cn/thread-1199847-1-1.html">termux上安装pillow 亲测</a></p>
+]]></content>
+      <tags>
+        <tag>termux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vim适配hexo和markdown</title>
     <url>/2021/05/14/vim%E9%80%82%E9%85%8Dhexo%E5%92%8Cmarkdown/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>安装好vimplug</p>
@@ -203,20 +217,6 @@
 ]]></content>
       <tags>
         <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>termux安装uiautomator2</title>
-    <url>/2021/05/30/termux%E5%AE%89%E8%A3%85uiautomator2/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="需要安装些依赖"><a href="#需要安装些依赖" class="headerlink" title="需要安装些依赖"></a>需要安装些依赖</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libxslt libjpeg-turbo</span><br><span class="line">pip3 install libxml2</span><br></pre></td></tr></table></figure>
-<h3 id="安装uiautomator2"><a href="#安装uiautomator2" class="headerlink" title="安装uiautomator2"></a>安装uiautomator2</h3><pre><code>pip3 install uiautomator2
-</code></pre>
-<h3 id="运行python自动化脚本还需要adb"><a href="#运行python自动化脚本还需要adb" class="headerlink" title="运行python自动化脚本还需要adb"></a>运行python自动化脚本还需要adb</h3><pre><code>pkg install -y platform-tool
-</code></pre>
-<p><a href="https://www.52pojie.cn/thread-1199847-1-1.html">termux上安装pillow 亲测</a></p>
-]]></content>
-      <tags>
-        <tag>termux</tag>
       </tags>
   </entry>
   <entry>
@@ -370,21 +370,21 @@ KV504
       </tags>
   </entry>
   <entry>
-    <title>强风吹拂(1-5)</title>
+    <title>强风吹拂</title>
     <url>/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="第1集"><a href="#第1集" class="headerlink" title="第1集"></a>第1集</h3><div id="dplayer20" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer20 = new DPlayer({"element":document.getElementById("dplayer20"),"video":{"url":"https://www.multcloud.com/api/files/7f88f31327bc406ea26d5ab4e0834c01/content?"}});</script>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="第1集"><a href="#第1集" class="headerlink" title="第1集"></a>第1集</h3><div id="dplayer20" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer20 = new DPlayer({"element":document.getElementById("dplayer20"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/强风吹拂-第1集.mp4"}});</script>
 
 <hr>
-<h3 id="第2集"><a href="#第2集" class="headerlink" title="第2集"></a>第2集</h3><div id="dplayer21" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer21 = new DPlayer({"element":document.getElementById("dplayer21"),"video":{"url":"https://www.multcloud.com/api/files/c36c8cfb28784ea8854f02b1901d8c2f/content?"}});</script>
+<h3 id="第2集"><a href="#第2集" class="headerlink" title="第2集"></a>第2集</h3><div id="dplayer21" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer21 = new DPlayer({"element":document.getElementById("dplayer21"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/强风吹拂-第2集.mp4"}});</script>
 
 <hr>
-<h3 id="第3集"><a href="#第3集" class="headerlink" title="第3集"></a>第3集</h3><div id="dplayer22" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer22 = new DPlayer({"element":document.getElementById("dplayer22"),"video":{"url":"https://www.multcloud.com/api/files/faa3215a49e64e68b4c2ca763043818f/content"}});</script>
+<h3 id="第3集"><a href="#第3集" class="headerlink" title="第3集"></a>第3集</h3><div id="dplayer22" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer22 = new DPlayer({"element":document.getElementById("dplayer22"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/强风吹拂-第3集.mp4"}});</script>
 
 <hr>
-<h3 id="第4集"><a href="#第4集" class="headerlink" title="第4集:"></a>第4集:</h3><div id="dplayer23" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer23 = new DPlayer({"element":document.getElementById("dplayer23"),"video":{"url":"https://www.multcloud.com/api/files/b72038b2f779450995dd558c13938b8e/content?"}});</script>
+<h3 id="第4集"><a href="#第4集" class="headerlink" title="第4集:"></a>第4集:</h3><div id="dplayer23" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer23 = new DPlayer({"element":document.getElementById("dplayer23"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/强风吹拂-第4集.mp4"}});</script>
 
 <hr>
-<h3 id="第5集"><a href="#第5集" class="headerlink" title="第5集"></a>第5集</h3><div id="dplayer24" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer24 = new DPlayer({"element":document.getElementById("dplayer24"),"video":{"url":"https://www.multcloud.com/api/files/477f2ffa70e8471fb61efe6a67671233/content?"}});</script>
+<h3 id="第5集"><a href="#第5集" class="headerlink" title="第5集"></a>第5集</h3><div id="dplayer24" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer24 = new DPlayer({"element":document.getElementById("dplayer24"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/强风吹拂-第5集.mp4"}});</script>
 
 <p><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82/">1-5</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-6-10/">6-10</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-11-15/">11-15</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-16-20/">16-20</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-21-23/">21-23</a></p>
 ]]></content>
