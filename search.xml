@@ -126,7 +126,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
@@ -159,7 +159,10 @@
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="用-Python-和-OpenCV-检测和跟踪运动对象"><a href="#用-Python-和-OpenCV-检测和跟踪运动对象" class="headerlink" title="用 Python 和 OpenCV 检测和跟踪运动对象"></a><a href="https://noahzhy.github.io/2018/02/02/%E7%94%A8-Python-%E5%92%8C-OpenCV-%E6%A3%80%E6%B5%8B%E5%92%8C%E8%B7%9F%E8%B8%AA%E8%BF%90%E5%8A%A8%E5%AF%B9%E8%B1%A1/">用 Python 和 OpenCV 检测和跟踪运动对象</a></h3><blockquote>
 <p>这里面提到的OpenCV进行运动检测、追踪和分析的几篇论文</p>
 </blockquote>
-<h5 id="An-improved-adaptive-background-mixture-model-for-real-time-tracking-with-shadow-detection"><a href="#An-improved-adaptive-background-mixture-model-for-real-time-tracking-with-shadow-detection" class="headerlink" title="An improved adaptive background mixture model for real-time tracking with shadow detection"></a><a href="http://www.ee.surrey.ac.uk/CVSSP/Publications/papers/KaewTraKulPong-AVBS01.pdf">An improved adaptive background mixture model for real-time tracking with shadow detection</a></h5><h5 id="Efficient-Adaptive-Density-Estimation-per-Image-Pixel-for-the-Task-of-Background-Subtraction"><a href="#Efficient-Adaptive-Density-Estimation-per-Image-Pixel-for-the-Task-of-Background-Subtraction" class="headerlink" title="Efficient Adaptive Density Estimation per Image Pixel for the Task of Background Subtraction"></a><a href="http://www.zoranz.net/Publications/zivkovicPRL2006.pdf">Efficient Adaptive Density Estimation per Image Pixel for the Task of Background Subtraction</a></h5><h5 id="Visual-Tracking-of-Human-Visitors-under-Variable-Lighting-Conditions-for-a-Responsive-Audio-Art-Installation"><a href="#Visual-Tracking-of-Human-Visitors-under-Variable-Lighting-Conditions-for-a-Responsive-Audio-Art-Installation" class="headerlink" title="Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation"></a><a href="http://goldberg.berkeley.edu/pubs/acc-2012-visual-tracking-final.pdf">Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation</a></h5>]]></content>
+<h5 id="An-improved-adaptive-background-mixture-model-for-real-time-tracking-with-shadow-detection"><a href="#An-improved-adaptive-background-mixture-model-for-real-time-tracking-with-shadow-detection" class="headerlink" title="An improved adaptive background mixture model for real-time tracking with shadow detection"></a><a href="http://www.ee.surrey.ac.uk/CVSSP/Publications/papers/KaewTraKulPong-AVBS01.pdf">An improved adaptive background mixture model for real-time tracking with shadow detection</a></h5><h5 id="Efficient-Adaptive-Density-Estimation-per-Image-Pixel-for-the-Task-of-Background-Subtraction"><a href="#Efficient-Adaptive-Density-Estimation-per-Image-Pixel-for-the-Task-of-Background-Subtraction" class="headerlink" title="Efficient Adaptive Density Estimation per Image Pixel for the Task of Background Subtraction"></a><a href="http://www.zoranz.net/Publications/zivkovicPRL2006.pdf">Efficient Adaptive Density Estimation per Image Pixel for the Task of Background Subtraction</a></h5><h5 id="Visual-Tracking-of-Human-Visitors-under-Variable-Lighting-Conditions-for-a-Responsive-Audio-Art-Installation"><a href="#Visual-Tracking-of-Human-Visitors-under-Variable-Lighting-Conditions-for-a-Responsive-Audio-Art-Installation" class="headerlink" title="Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation"></a><a href="http://goldberg.berkeley.edu/pubs/acc-2012-visual-tracking-final.pdf">Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation</a></h5><h5 id="termux源添加含有opencv的库"><a href="#termux源添加含有opencv的库" class="headerlink" title="termux源添加含有opencv的库"></a><a href="https://github.com/its-pointless/gcc_termux">termux源添加含有opencv的库</a></h5><h3 id="termux添加opencv"><a href="#termux添加opencv" class="headerlink" title="termux添加opencv"></a>termux添加opencv</h3><pre><code>wget https://its-pointless.github.io/setup-pointless-repo.sh
+pkg install opencv
+</code></pre>
+]]></content>
       <tags>
         <tag>python 埋坑</tag>
       </tags>
@@ -189,20 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>termux安装uiautomator2</title>
-    <url>/2021/05/30/termux%E5%AE%89%E8%A3%85uiautomator2/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="需要安装些依赖"><a href="#需要安装些依赖" class="headerlink" title="需要安装些依赖"></a>需要安装些依赖</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libxslt libjpeg-turbo</span><br><span class="line">pip3 install libxml2</span><br></pre></td></tr></table></figure>
-<h3 id="安装uiautomator2"><a href="#安装uiautomator2" class="headerlink" title="安装uiautomator2"></a>安装uiautomator2</h3><pre><code>pip3 install uiautomator2
-</code></pre>
-<h3 id="运行python自动化脚本还需要adb"><a href="#运行python自动化脚本还需要adb" class="headerlink" title="运行python自动化脚本还需要adb"></a>运行python自动化脚本还需要adb</h3><pre><code>pkg install -y platform-tool
-</code></pre>
-<p><a href="https://www.52pojie.cn/thread-1199847-1-1.html">termux上安装pillow 亲测</a></p>
-]]></content>
-      <tags>
-        <tag>termux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vim适配hexo和markdown</title>
     <url>/2021/05/14/vim%E9%80%82%E9%85%8Dhexo%E5%92%8Cmarkdown/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>安装好vimplug</p>
@@ -220,17 +209,17 @@
       </tags>
   </entry>
   <entry>
-    <title>一些报错</title>
-    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
-<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
-</blockquote>
-<blockquote>
-<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
-</blockquote>
+    <title>termux安装uiautomator2</title>
+    <url>/2021/05/30/termux%E5%AE%89%E8%A3%85uiautomator2/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="需要安装些依赖"><a href="#需要安装些依赖" class="headerlink" title="需要安装些依赖"></a>需要安装些依赖</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libxslt libjpeg-turbo</span><br><span class="line">pip3 install libxml2</span><br></pre></td></tr></table></figure>
+<h3 id="安装uiautomator2"><a href="#安装uiautomator2" class="headerlink" title="安装uiautomator2"></a>安装uiautomator2</h3><pre><code>pip3 install uiautomator2
+</code></pre>
+<h3 id="运行python自动化脚本还需要adb"><a href="#运行python自动化脚本还需要adb" class="headerlink" title="运行python自动化脚本还需要adb"></a>运行python自动化脚本还需要adb</h3><pre><code>pkg install -y platform-tool
+</code></pre>
+<p><a href="https://www.52pojie.cn/thread-1199847-1-1.html">termux上安装pillow 亲测</a></p>
 ]]></content>
       <tags>
-        <tag>error</tag>
+        <tag>termux</tag>
       </tags>
   </entry>
   <entry>
@@ -284,6 +273,20 @@
       </tags>
   </entry>
   <entry>
+    <title>一些报错</title>
+    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
+<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
+</blockquote>
+<blockquote>
+<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>error</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用AdGuardhome过滤广告</title>
     <url>/2021/05/16/%E4%BD%BF%E7%94%A8AdGuardhome%E8%BF%87%E6%BB%A4%E5%B9%BF%E5%91%8A/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>参考<br><a href="https://www.adgk.net/archives/20/">在安卓手机上运行AdGuardhome</a><br><a href="https://github.com/AdguardTeam/AdGuardHome/releases">AdGuard Home Releases</a><br><a href="https://blog.csdn.net/xikangsoon/article/details/82995940">export 在shell脚本中设置环境变量失效</a><br><a href="https://blog.csdn.net/qq_35425070/article/details/84841732">termux 设置PATH环境变量</a></p>
@@ -291,6 +294,19 @@
 ]]></content>
       <tags>
         <tag>AdGuardhome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在zsh使用命令报错</title>
+    <url>/2021/05/29/%E5%9C%A8zsh%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><pre><code>zsh: corrupt history file /home/XXX/.zsh_history
+</code></pre>
+<h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>manjaro是安装在外置硬盘上的，动一下线好像系统就挂了；<br>硬盘盒休眠我刷固件关掉了，应该是接口接触不良，电脑这边是雷电3接口，用windows的时候动一下线也掉盘</p>
+<h3 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp .zsh_history zsh_history</span><br><span class="line">rm -f .zsh_history</span><br><span class="line">strings zsh_history .zsh_history</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/qq_28426351/article/details/51750347">从CSDN抄的-ZSH出现问题</a></p>
+]]></content>
+      <tags>
+        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -307,19 +323,6 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在zsh使用命令报错</title>
-    <url>/2021/05/29/%E5%9C%A8zsh%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><pre><code>zsh: corrupt history file /home/XXX/.zsh_history
-</code></pre>
-<h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>manjaro是安装在外置硬盘上的，动一下线好像系统就挂了；<br>硬盘盒休眠我刷固件关掉了，应该是接口接触不良，电脑这边是雷电3接口，用windows的时候动一下线也掉盘</p>
-<h3 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp .zsh_history zsh_history</span><br><span class="line">rm -f .zsh_history</span><br><span class="line">strings zsh_history .zsh_history</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.csdn.net/qq_28426351/article/details/51750347">从CSDN抄的-ZSH出现问题</a></p>
-]]></content>
-      <tags>
-        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -356,19 +359,19 @@ KV504
   <entry>
     <title>强风吹拂</title>
     <url>/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="第1集"><a href="#第1集" class="headerlink" title="第1集"></a>第1集</h3><div id="dplayer15" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer15 = new DPlayer({"element":document.getElementById("dplayer15"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC1%E9%9B%86%20.mp4"}});</script>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="第1集"><a href="#第1集" class="headerlink" title="第1集"></a>第1集</h3><div id="dplayer20" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer20 = new DPlayer({"element":document.getElementById("dplayer20"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC1%E9%9B%86%20.mp4"}});</script>
 
 <hr>
-<h3 id="第2集"><a href="#第2集" class="headerlink" title="第2集"></a>第2集</h3><div id="dplayer16" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer16 = new DPlayer({"element":document.getElementById("dplayer16"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC2%E9%9B%86%20.mp4"}});</script>
+<h3 id="第2集"><a href="#第2集" class="headerlink" title="第2集"></a>第2集</h3><div id="dplayer21" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer21 = new DPlayer({"element":document.getElementById("dplayer21"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC2%E9%9B%86%20.mp4"}});</script>
 
 <hr>
-<h3 id="第3集"><a href="#第3集" class="headerlink" title="第3集"></a>第3集</h3><div id="dplayer17" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer17 = new DPlayer({"element":document.getElementById("dplayer17"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC3%E9%9B%86%20.mp4"}});</script>
+<h3 id="第3集"><a href="#第3集" class="headerlink" title="第3集"></a>第3集</h3><div id="dplayer22" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer22 = new DPlayer({"element":document.getElementById("dplayer22"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC3%E9%9B%86%20.mp4"}});</script>
 
 <hr>
-<h3 id="第4集"><a href="#第4集" class="headerlink" title="第4集:"></a>第4集:</h3><div id="dplayer18" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer18 = new DPlayer({"element":document.getElementById("dplayer18"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC4%E9%9B%86%20.mp4"}});</script>
+<h3 id="第4集"><a href="#第4集" class="headerlink" title="第4集:"></a>第4集:</h3><div id="dplayer23" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer23 = new DPlayer({"element":document.getElementById("dplayer23"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC4%E9%9B%86%20.mp4"}});</script>
 
 <hr>
-<h3 id="第5集"><a href="#第5集" class="headerlink" title="第5集"></a>第5集</h3><div id="dplayer19" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer19 = new DPlayer({"element":document.getElementById("dplayer19"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC5%E9%9B%86%20.mp4"}});</script>
+<h3 id="第5集"><a href="#第5集" class="headerlink" title="第5集"></a>第5集</h3><div id="dplayer24" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer24 = new DPlayer({"element":document.getElementById("dplayer24"),"video":{"url":"https://social-eudcation.3309839520.workers.dev/Anime/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82%20-%20%E7%AC%AC5%E9%9B%86%20.mp4"}});</script>
 
 <p><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82/">1-5</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-6-10/">6-10</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-11-15/">11-15</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-16-20/">16-20</a><br><a href="https://arbaleast.github.io/2021/05/23/%E5%BC%BA%E9%A3%8E%E5%90%B9%E6%8B%82-21-23/">21-23</a></p>
 ]]></content>
