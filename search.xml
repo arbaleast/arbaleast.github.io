@@ -126,7 +126,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
@@ -220,6 +220,20 @@
       </tags>
   </entry>
   <entry>
+    <title>一些报错</title>
+    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
+<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
+</blockquote>
+<blockquote>
+<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>error</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>交响曲</title>
     <url>/2021/05/14/%E4%BA%A4%E5%93%8D%E6%9B%B2/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h1 id="Ludwig-van-Beethoven-贝多芬"><a href="#Ludwig-van-Beethoven-贝多芬" class="headerlink" title="Ludwig van Beethoven(贝多芬)"></a>Ludwig van Beethoven(贝多芬)</h1><h4 id="Symphony-No-5"><a href="#Symphony-No-5" class="headerlink" title="Symphony No. 5"></a>Symphony No. 5</h4><blockquote>
@@ -270,20 +284,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一些报错</title>
-    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
-<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
-</blockquote>
-<blockquote>
-<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>error</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用AdGuardhome过滤广告</title>
     <url>/2021/05/16/%E4%BD%BF%E7%94%A8AdGuardhome%E8%BF%87%E6%BB%A4%E5%B9%BF%E5%91%8A/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>参考<br><a href="https://www.adgk.net/archives/20/">在安卓手机上运行AdGuardhome</a><br><a href="https://github.com/AdguardTeam/AdGuardHome/releases">AdGuard Home Releases</a><br><a href="https://blog.csdn.net/xikangsoon/article/details/82995940">export 在shell脚本中设置环境变量失效</a><br><a href="https://blog.csdn.net/qq_35425070/article/details/84841732">termux 设置PATH环境变量</a></p>
@@ -303,6 +303,7 @@
 <blockquote>
 <p>我讲述的不够深入， &gt;组织语言的时候逻辑混乱，完全照ppt念了，没说过自己的看法</p>
 </blockquote>
+<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fdhuiracid%2Dmy%2Esharepoint%2Ecom%3A443%2Fpersonal%2Fb3309839520%5Fa1%5Fu365%5Forg%2F%5Flayouts%2F15%2Fdownload%2Easpx%3FUniqueId%3Def10c243%2D1ce1%2D4c0e%2Dbd76%2D38400a3945f1%26Translate%3Dfalse%26tempauth%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0%2EeyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvZGh1aXJhY2lkLW15LnNoYXJlcG9pbnQuY29tQDcwNzYxYjllLTNjMjctNGFhNS1iMjNjLWRlZGFhZjVmYTYwMyIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2MjI1MzQ5NzkiLCJleHAiOiIxNjIyNTM4NTc5IiwiZW5kcG9pbnR1cmwiOiJES0pld3c0ZCthNFFvbTBZY3oxQXljeTdWTGhxdUQyZGdidEdFUjJrWWgwPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTU2IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJOelE1TXpkaVlXTXRNMlJpWXkwME1XSTVMVGd6TURBdE1HSTVObUZpWXpOaFpEWm0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiT1RWaE16SXlOek10WkRreFpDMDBOVE0xTFRrNE1qWXRPVGMxT0RGbE5EVXlNemhtIiwiYXBwX2Rpc3BsYXluYW1lIjoiT25lTWFuYWdlciIsImFwcGlkIjoiNzM0ZWY5MjgtZDc0Yy00NTU1LThkMWItZDk0MmZhMGExYTQxIiwidGlkIjoiNzA3NjFiOWUtM2MyNy00YWE1LWIyM2MtZGVkYWFmNWZhNjAzIiwidXBuIjoiYjMzMDk4Mzk1MjBAYTEudTM2NS5vcmciLCJwdWlkIjoiMTAwMzIwMDBFRUU4RkM2RiIsImNhY2hla2V5IjoiMGguZnxtZW1iZXJzaGlwfDEwMDMyMDAwZWVlOGZjNmZAbGl2ZS5jb20iLCJzY3AiOiJhbGxmaWxlcy53cml0ZSBhbGxzaXRlcy53cml0ZSIsImFjcnMiOiJyMSxyMixyMyxjMSxjMixjMyIsInR0IjoiMiIsInVzZVBlcnNpc3RlbnRDb29raWUiOm51bGx9%2ET2VqUmRqY2FXWnFIbHVGdkRwOU14Sms1NlgxYTgyZWVQdG96QVZrZHRiOD0%26ApiVersion%3D2%2E0&amp;wdAr=1.7777777777777777" width="100%" height=520px frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
 ]]></content>
   </entry>
   <entry>
@@ -398,6 +399,20 @@ KV504
 
 <h3 id="mt论坛签到"><a href="#mt论坛签到" class="headerlink" title="mt论坛签到"></a>mt论坛签到</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> uiautomator2 <span class="keyword">as</span> u2</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">d=u2.connect(<span class="string">&#x27;192.168.98.142&#x27;</span>)</span><br><span class="line">d.app_start(<span class="string">&#x27;cc.binmt.bbs.v2&#x27;</span>, stop=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#等待界面加载</span></span><br><span class="line"><span class="keyword">if</span> d(text=<span class="string">&quot;每日签到 轻松赚取金币&quot;</span>).exists(timeout=<span class="number">5</span>):</span><br><span class="line">        d(text=<span class="string">&quot;每日签到 轻松赚取金币&quot;</span>).click()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;not exists!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#签到</span></span><br><span class="line"><span class="keyword">if</span> d(resourceId=<span class="string">&quot;signresult&quot;</span>).exists(timeout=<span class="number">5</span>):</span><br><span class="line">    d(resourceId=<span class="string">&quot;signresult&quot;</span>).click()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;not exists!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭mt论坛</span></span><br><span class="line">d.app_stop(<span class="string">&#x27;cc.binmt.bbs.v2&#x27;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>正则表达式-vim中使用</title>
+    <url>/2021/06/01/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-vim%E4%B8%AD%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p><a href="https://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/">Vim查找替换及正则表达式的使用</a></p>
+<blockquote>
+<p>这个命令我觉得挺有用的</p>
+</blockquote>
+<pre><code>:%s#\(查找东西的开头\)\(.*\)\(查找结尾\)#替换的东西#
+</code></pre>
+]]></content>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
   </entry>
   <entry>
     <title>砌体结构知识梳理</title>
