@@ -5,6 +5,7 @@ tags: python
 description: somethingelse
 ---
 
+[通过adb shell dumpsys + python监控手机电量和CPU](https://blog.csdn.net/weixin_44546340/article/details/88871203)
 
 ```python
 import threading
@@ -84,4 +85,10 @@ def CameraAutoTest():
 		fl.close()
 		time.sleep(5)
 ```
+
+### 手机自动充电
+
+设想电量小于15%充电;大于85%断电
+
+[https://blog.csdn.net/skyxiaojt/article/details/80190992](使用adb命令查看电池电量信息)
 
