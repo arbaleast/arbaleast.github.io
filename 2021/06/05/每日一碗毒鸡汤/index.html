@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"arbaleast.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","aisplay":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="cf-worker-soul-soup">
+  <meta name="description" content="cf-worker-soul-soupAPI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日一碗毒鸡汤">
 <meta property="og:url" content="https://arbaleast.github.io/2021/06/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%A2%97%E6%AF%92%E9%B8%A1%E6%B1%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="cf-worker-soul-soup">
+<meta property="og:description" content="cf-worker-soul-soupAPI">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-05T07:40:48.000Z">
-<meta property="article:modified_time" content="2021-06-05T07:41:39.662Z">
+<meta property="article:modified_time" content="2021-06-05T15:27:24.253Z">
 <meta property="article:author" content="arbaleast">
 <meta name="twitter:card" content="summary">
 
@@ -169,27 +169,10 @@
 
     </div>
   </div>
-<div class="hitokoto-title">
-	<i class="fa fa-paragraph"></i>
-	<b>一言</b>
-</div>
-<div id="hitokoto">:D 获取中...</div>
-<i id="hitofrom">:D 获取中...</i>
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
-      var hitofrom = document.getElementById('hitofrom');
-      hitofrom.innerText = "——" + data.from + '\xa0'; 
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-</script>
+<script type="text/javascript" src="https://api.zmki.cn/dujitang/index.php/?encode=js&charset=utf-8"></script>
+<div class="jitang-title fa fa-paragraph">每日一碗:</div>
+<div id="jitang"><script>dujitang()</script></div>
+
 
 </div>
     </header>
@@ -237,7 +220,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-05 15:40:48 / Modified: 15:41:39" itemprop="dateCreated datePublished" datetime="2021-06-05T15:40:48+08:00">2021-06-05</time>
+              <time title="Created: 2021-06-05 15:40:48 / Modified: 23:27:24" itemprop="dateCreated datePublished" datetime="2021-06-05T15:40:48+08:00">2021-06-05</time>
             </span>
 
           
@@ -258,7 +241,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/DPlayer.min.js"> </script><p><a target="_blank" rel="noopener" href="https://github.com/roojay520/cf-worker-soul-soup">cf-worker-soul-soup</a></p>
+        <script src="/assets/js/DPlayer.min.js"> </script><p><a target="_blank" rel="noopener" href="https://github.com/roojay520/cf-worker-soul-soup">cf-worker-soul-soup</a><br><a target="_blank" rel="noopener" href="https://www.zmki.cn/api-%E9%9B%86%E5%90%88">API </a></p>
 
     </div>
 

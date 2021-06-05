@@ -167,27 +167,10 @@
 
     </div>
   </div>
-<div class="hitokoto-title">
-	<i class="fa fa-paragraph"></i>
-	<b>一言</b>
-</div>
-<div id="hitokoto">:D 获取中...</div>
-<i id="hitofrom">:D 获取中...</i>
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
-      var hitofrom = document.getElementById('hitofrom');
-      hitofrom.innerText = "——" + data.from + '\xa0'; 
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
-</script>
+<script type="text/javascript" src="https://api.zmki.cn/dujitang/index.php/?encode=js&charset=utf-8"></script>
+<div class="jitang-title fa fa-paragraph">每日一碗:</div>
+<div id="jitang"><script>dujitang()</script></div>
+
 
 </div>
     </header>
@@ -235,7 +218,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-05 15:40:48 / Modified: 15:41:39" itemprop="dateCreated datePublished" datetime="2021-06-05T15:40:48+08:00">2021-06-05</time>
+              <time title="Created: 2021-06-05 15:40:48 / Modified: 23:27:24" itemprop="dateCreated datePublished" datetime="2021-06-05T15:40:48+08:00">2021-06-05</time>
             </span>
 
           
@@ -249,7 +232,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <script src="/assets/js/DPlayer.min.js"> </script><p><a target="_blank" rel="noopener" href="https://github.com/roojay520/cf-worker-soul-soup">cf-worker-soul-soup</a></p>
+          <script src="/assets/js/DPlayer.min.js"> </script><p><a target="_blank" rel="noopener" href="https://github.com/roojay520/cf-worker-soul-soup">cf-worker-soul-soup</a><br><a target="_blank" rel="noopener" href="https://www.zmki.cn/api-%E9%9B%86%E5%90%88">API </a></p>
 
       
     </div>
