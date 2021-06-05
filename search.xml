@@ -28,6 +28,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/05/16/hello-world/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>hexo功能优化</title>
     <url>/2021/05/27/hexo%E5%8A%9F%E8%83%BD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="添加pdf预览"><a href="#添加pdf预览" class="headerlink" title="添加pdf预览"></a>添加pdf预览</h3><h5 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h5><pre><code>git clone https://github.com/theme-next/theme-next-pdf /source/lib/pdf
@@ -45,24 +63,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/05/16/hello-world/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>linux deploy ubuntu18 升级ubuntu20.04</title>
@@ -126,7 +126,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
