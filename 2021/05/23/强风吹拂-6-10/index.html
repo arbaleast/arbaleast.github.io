@@ -170,20 +170,27 @@
 
     </div>
   </div>
+<div class="hitokoto-title">
+	<i class="fa fa-paragraph"></i>
+	<b>一言</b>
+</div>
+<div id="hitokoto">:D 获取中...</div>
+<i id="hitofrom">:D 获取中...</i>
 <script>
-  fetch('https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d&c=h&c=l') # 这里的链接可以根据文档自定义
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto_text')
-      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-      hitokoto.innerText = data.hitokoto
-      const from = document.getElementById('from')
-      from.innerText = data.from
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
     })
-    .catch(console.error)
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
+      var hitofrom = document.getElementById('hitofrom');
+      hitofrom.innerText = "——" + data.from + '\xa0'; 
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
 </script>
-<p id="hitokoto" style="text-align:center"><b id="hitokoto_text"></b>——
-<b id="from"></b></p>
 
 </div>
     </header>
@@ -387,7 +394,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -459,9 +466,11 @@ setInterval("createtime()",250);
 <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
 <span id="busuanzi\_container\_site\_uv">
- <br>本站访客数<span id="busuanzi\_value\_site\_uv"></span>人次
-</span>
+ <br>本站访客数<span id="busuanzi\_value\_site\_uv"></span>人次</span>
 
+
+<script src="https://soul-soup.fe.workers.dev"></script>
+<span id=random>每日一碗<span id="title"></span></span>
 
 
         
