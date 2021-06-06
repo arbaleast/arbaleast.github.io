@@ -41,4 +41,10 @@ description: 让你头发掉光的东西
     sudo pacman -S tesseract-data-chi_sim tesseract-data-eng
 [Linux 下使用 Python OCR 识别 ](https://violetus.life/utilities/pylinux_ocr/)
             
-    
+### 参考
+[用OpenCV和Python识别二维码和条形码](https://zhuanlan.zhihu.com/p/40025902)
+[Python--文字识别--Tesseract](https://zhuanlan.zhihu.com/p/31530755)
+[在python代码中使用Tesseract OCR](https://zhuanlan.zhihu.com/p/64543244)
+[Python 游戏辅助基础之 Aircv](https://blog.csdn.net/baililiushu/article/details/107487084)
+[基于python-opencv的图像比对功能](http://blog.wingtsunai.cn/2020/02/20/python-cv/)
+[ Appium 基于图像识别、文字识别，完成点击操作 (一) ](https://testerhome.com/topics/16503)
