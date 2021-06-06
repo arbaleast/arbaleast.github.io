@@ -1174,7 +1174,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #557e18;
+  background: #098f01;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2532,7 +2532,7 @@ blockquote {
   border-radius: 0.5rem;
   margin: 20px 10px 0px 0px;
   width: auto;
-  padding: 3px 3px 3px 20px;
+  padding: 3px 15px 3px 20px;
 }
 #jitang {
   background: #fff;
