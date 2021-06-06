@@ -1174,7 +1174,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cdffab;
+  background: #ff1aff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2539,8 +2539,8 @@ blockquote {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   border-radius: 0.5rem;
   margin: 5px 0px 2.5px 0px;
-  width: 90%;
-  padding: 3px 3px 3px 20px;
+  width: 25%;
+  padding: 2px 15px 2px 20px;
 }
 .container .header-inner {
   width: 100%;
