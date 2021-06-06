@@ -22,10 +22,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Firefox远程调试</title>
+    <url>/2021/06/06/Firefox%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p><a href="https://blog.csdn.net/dwj7758520/article/details/99649929">利用FireFox远程调试安卓手机web网页应用</a></p>
+]]></content>
+      <tags>
+        <tag>web调试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PC_web_自动化实现</title>
     <url>/2021/05/09/PC-web-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p><a href="https://www.runoob.com/xpath/xpath-syntax.html">XPath 语法</a><br><a href="https://splinter-docs-zh-cn.readthedocs.io/zh/latest/finding.html">splinter查找元素</a><br><a href="https://blog.csdn.net/kujie0121/article/details/110949885">splinter官方文档</a><br><a href="https://blog.csdn.net/kujie0121/article/details/110949885">xpath里如何定义包含一个或多个class属性</a><br><a href="https://woodenrobot.me/2017/10/17/Python-Splinter-%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">Python + Splinter 实现浏览器自动化操作入门指南</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>git的使用</title>
+    <url>/2021/06/06/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p><a href="https://blog.csdn.net/weixin_40769885/article/details/105560732">解决每次git pull、git push都需要输入账号和密码的问题</a></p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -126,7 +144,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
@@ -219,6 +237,20 @@ pkg install opencv
       </tags>
   </entry>
   <entry>
+    <title>一些报错</title>
+    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
+<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
+</blockquote>
+<blockquote>
+<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>error</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vim适配hexo和markdown</title>
     <url>/2021/05/14/vim%E9%80%82%E9%85%8Dhexo%E5%92%8Cmarkdown/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><p>安装好vimplug</p>
@@ -233,20 +265,6 @@ pkg install opencv
 ]]></content>
       <tags>
         <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一些报错</title>
-    <url>/2021/05/29/%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="install-sh-Syntax-error-“-“-unexpected"><a href="#install-sh-Syntax-error-“-“-unexpected" class="headerlink" title="install.sh: Syntax error: “(“ unexpected"></a>install.sh: Syntax error: “(“ unexpected</h3><blockquote>
-<p><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected/45784">Shell script fails: Syntax error: “(” unexpected</a><br>    sudo bash “你需要运行的脚本”<br>这里我使用的是zsh运行，而不是bash运行，出现了报错</p>
-</blockquote>
-<blockquote>
-<p>IndentationError:unindent does not match any outer indentation level<br>抄代码的时候没注意，缩进出问题了<br><a href="https://blog.csdn.net/u010412719/article/details/47089473">python中出现IndentationError:unindent does not match any outer indentation level错误</a></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>error</tag>
       </tags>
   </entry>
   <entry>
