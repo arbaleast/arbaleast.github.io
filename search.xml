@@ -73,25 +73,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>hexo功能优化</title>
-    <url>/2021/05/27/hexo%E5%8A%9F%E8%83%BD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="添加pdf预览"><a href="#添加pdf预览" class="headerlink" title="添加pdf预览"></a>添加pdf预览</h3><h5 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h5><pre><code>git clone https://github.com/theme-next/theme-next-pdf /source/lib/pdf
-</code></pre>
-<h5 id="在主题配置中-config-yml启用pdf"><a href="#在主题配置中-config-yml启用pdf" class="headerlink" title="在主题配置中_config.yml启用pdf"></a>在主题配置中_config.yml启用pdf</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    # PDF tag</span><br><span class="line"># NexT will try to load pdf files natively, if failed, pdf.js will be used.</span><br><span class="line"># So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.</span><br><span class="line"># See: https://github.com/theme-next/theme-next-pdf</span><br><span class="line">pdf:</span><br><span class="line">  enable: true</span><br><span class="line">  # Default height</span><br><span class="line">  height: 500px</span><br></pre></td></tr></table></figure>
-
-<h5 id="如何在blog中使用（参考）"><a href="#如何在blog中使用（参考）" class="headerlink" title="如何在blog中使用（参考）"></a>如何在blog中使用（参考）</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% pdf /path/to/your/file.pdf %&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><pre><code>可能需要手动clone， 暂时没有寻找更好的方法
-不删除之前clone带来的.git文件的话，是没办法上传博客源码到blog分支的
-</code></pre>
-<h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><pre><code>第一个在更新里面
-另外是pdf链接的问题，onedrive的链接没法直接预览，改用了gdrive的
-</code></pre>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>linux deploy ubuntu18 升级ubuntu20.04</title>
     <url>/2021/05/29/linux-deploy-ubuntu18-%E5%8D%87%E7%BA%A7ubuntu20-04/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）"><a href="#换清华源，中科大的有校验问题（估计是源比较旧了）" class="headerlink" title="换清华源，中科大的有校验问题（估计是源比较旧了）"></a>换清华源，中科大的有校验问题（估计是源比较旧了）</h3><h5 id="备份-etc-apt-source-list"><a href="#备份-etc-apt-source-list" class="headerlink" title="备份/etc/apt/source.list"></a>备份/etc/apt/source.list</h5><pre><code>sudo cp /etc/apt/source.list /etc/apt/source.list.bak
@@ -110,6 +91,25 @@
 ]]></content>
       <tags>
         <tag>linux deploy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo功能优化</title>
+    <url>/2021/05/27/hexo%E5%8A%9F%E8%83%BD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="添加pdf预览"><a href="#添加pdf预览" class="headerlink" title="添加pdf预览"></a>添加pdf预览</h3><h5 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h5><pre><code>git clone https://github.com/theme-next/theme-next-pdf /source/lib/pdf
+</code></pre>
+<h5 id="在主题配置中-config-yml启用pdf"><a href="#在主题配置中-config-yml启用pdf" class="headerlink" title="在主题配置中_config.yml启用pdf"></a>在主题配置中_config.yml启用pdf</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    # PDF tag</span><br><span class="line"># NexT will try to load pdf files natively, if failed, pdf.js will be used.</span><br><span class="line"># So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.</span><br><span class="line"># See: https://github.com/theme-next/theme-next-pdf</span><br><span class="line">pdf:</span><br><span class="line">  enable: true</span><br><span class="line">  # Default height</span><br><span class="line">  height: 500px</span><br></pre></td></tr></table></figure>
+
+<h5 id="如何在blog中使用（参考）"><a href="#如何在blog中使用（参考）" class="headerlink" title="如何在blog中使用（参考）"></a>如何在blog中使用（参考）</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% pdf /path/to/your/file.pdf %&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><pre><code>可能需要手动clone， 暂时没有寻找更好的方法
+不删除之前clone带来的.git文件的话，是没办法上传博客源码到blog分支的
+</code></pre>
+<h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><pre><code>第一个在更新里面
+另外是pdf链接的问题，onedrive的链接没法直接预览，改用了gdrive的
+</code></pre>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -153,7 +153,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
