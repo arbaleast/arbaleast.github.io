@@ -1174,7 +1174,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #098f01;
+  background: #9521ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2660,7 +2660,7 @@ a:hover {
   margin-bottom: 20px;
 }
 body {
-  background-color: #eeeff0;
+  background-color: transparent;
 }
 .post-block {
   background: #fff;
