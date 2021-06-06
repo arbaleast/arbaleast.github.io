@@ -73,27 +73,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>linux deploy ubuntu18 升级ubuntu20.04</title>
-    <url>/2021/05/29/linux-deploy-ubuntu18-%E5%8D%87%E7%BA%A7ubuntu20-04/</url>
-    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）"><a href="#换清华源，中科大的有校验问题（估计是源比较旧了）" class="headerlink" title="换清华源，中科大的有校验问题（估计是源比较旧了）"></a>换清华源，中科大的有校验问题（估计是源比较旧了）</h3><h5 id="备份-etc-apt-source-list"><a href="#备份-etc-apt-source-list" class="headerlink" title="备份/etc/apt/source.list"></a>备份/etc/apt/source.list</h5><pre><code>sudo cp /etc/apt/source.list /etc/apt/source.list.bak
-</code></pre>
-<h5 id="替换source-list内容"><a href="#替换source-list内容" class="headerlink" title="替换source.list内容"></a>替换source.list内容</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/">Ubuntu Ports 镜像使用帮助-armhf架构</a></p>
-<h5 id="更新ubuntu源和软件"><a href="#更新ubuntu源和软件" class="headerlink" title="更新ubuntu源和软件"></a>更新ubuntu源和软件</h5><pre><code>sudo apt update &amp;&amp; sudo apt upgrade
-</code></pre>
-<hr>
-<h3 id="安装update-manager-core"><a href="#安装update-manager-core" class="headerlink" title="安装update-manager-core"></a>安装update-manager-core</h3><pre><code>sudo apt install -y update-manager-core
-</code></pre>
-<h3 id="升级ubutnu到20-04"><a href="#升级ubutnu到20-04" class="headerlink" title="升级ubutnu到20.04"></a>升级ubutnu到20.04</h3><pre><code>sudo do-release-upgrade -d
-</code></pre>
-<h3 id="检查ubuntu版本"><a href="#检查ubuntu版本" class="headerlink" title="检查ubuntu版本"></a>检查ubuntu版本</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 20.04.2 LTS</span><br><span class="line">Release:	20.04</span><br><span class="line">Codename:	focal</span><br></pre></td></tr></table></figure>
-<p><a href="https://cloud.tencent.com/developer/article/1626603">如何升级到 Ubuntu 20.04</a><br>搞定！！……又得重新安装软件了</p>
-]]></content>
-      <tags>
-        <tag>linux deploy</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo功能优化</title>
     <url>/2021/05/27/hexo%E5%8A%9F%E8%83%BD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="添加pdf预览"><a href="#添加pdf预览" class="headerlink" title="添加pdf预览"></a>添加pdf预览</h3><h5 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h5><pre><code>git clone https://github.com/theme-next/theme-next-pdf /source/lib/pdf
@@ -133,6 +112,27 @@
       </tags>
   </entry>
   <entry>
+    <title>linux deploy ubuntu18 升级ubuntu20.04</title>
+    <url>/2021/05/29/linux-deploy-ubuntu18-%E5%8D%87%E7%BA%A7ubuntu20-04/</url>
+    <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）"><a href="#换清华源，中科大的有校验问题（估计是源比较旧了）" class="headerlink" title="换清华源，中科大的有校验问题（估计是源比较旧了）"></a>换清华源，中科大的有校验问题（估计是源比较旧了）</h3><h5 id="备份-etc-apt-source-list"><a href="#备份-etc-apt-source-list" class="headerlink" title="备份/etc/apt/source.list"></a>备份/etc/apt/source.list</h5><pre><code>sudo cp /etc/apt/source.list /etc/apt/source.list.bak
+</code></pre>
+<h5 id="替换source-list内容"><a href="#替换source-list内容" class="headerlink" title="替换source.list内容"></a>替换source.list内容</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/">Ubuntu Ports 镜像使用帮助-armhf架构</a></p>
+<h5 id="更新ubuntu源和软件"><a href="#更新ubuntu源和软件" class="headerlink" title="更新ubuntu源和软件"></a>更新ubuntu源和软件</h5><pre><code>sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre>
+<hr>
+<h3 id="安装update-manager-core"><a href="#安装update-manager-core" class="headerlink" title="安装update-manager-core"></a>安装update-manager-core</h3><pre><code>sudo apt install -y update-manager-core
+</code></pre>
+<h3 id="升级ubutnu到20-04"><a href="#升级ubutnu到20-04" class="headerlink" title="升级ubutnu到20.04"></a>升级ubutnu到20.04</h3><pre><code>sudo do-release-upgrade -d
+</code></pre>
+<h3 id="检查ubuntu版本"><a href="#检查ubuntu版本" class="headerlink" title="检查ubuntu版本"></a>检查ubuntu版本</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 20.04.2 LTS</span><br><span class="line">Release:	20.04</span><br><span class="line">Codename:	focal</span><br></pre></td></tr></table></figure>
+<p><a href="https://cloud.tencent.com/developer/article/1626603">如何升级到 Ubuntu 20.04</a><br>搞定！！……又得重新安装软件了</p>
+]]></content>
+      <tags>
+        <tag>linux deploy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>manjaro + hexo = blog</title>
     <url>/2021/05/09/manjaro-hexo-blog/</url>
     <content><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><h3 id="添加utterances评论模块"><a href="#添加utterances评论模块" class="headerlink" title="添加utterances评论模块"></a>添加utterances评论模块</h3><blockquote>
@@ -153,7 +153,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utterances:</span><br><span class="line">  enable: true</span><br><span class="line">  repo:                                               	# owner/repo</span><br><span class="line">  issue_term:                                         	# pathname, url, title, og:title [ISSUE NUMBER] or [SPECIFIC TERM]</span><br><span class="line">  theme: 						                        # github-light or github-dark</span><br><span class="line">  label: 💬Comments  					                #  The label must exist in your repo, mine is 💬Com</span><br></pre></td></tr></table></figure>
 <p>注:如果登录后github后网页重定向至未知网页，记得修改hexo的url的博客地址<br><a href="https://blog.njilc.com/post/self-hosted-utterances-tutorial#%E9%80%9A%E8%BF%87cfworker%E9%83%A8%E7%BD%B2">自托管 Utterances 教程：基于 Github Issues 的轻量级博客评论系统 </a><br><a href="https://zhuanlan.zhihu.com/p/76237379">Hexo+NexT使用utterances评论插件</a></p>
 <hr>
-<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
+<p>免帐号密码上传github<br>生成并获取本机的ssh公钥<br>   ssh-keygen -t rsa            #之后的选择回车选择默认<br>   cat ~/.ssh/id_rsa.pub<br>然后在github帐号里面添加ssh密钥<br>测试ssh能否连接到github<br>   ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>                #成功一般会提示 Hi username! You’ve successfully authenticated, but GitHub does not provide shell access</p>
 <p>修改hexo的_config.yml文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxxx/xxxx.github.io.git</span><br><span class="line">  #格式必须是上述格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
