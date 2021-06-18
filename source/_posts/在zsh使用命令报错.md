@@ -20,4 +20,11 @@ cp .zsh_history zsh_history
 rm -f .zsh_history
 strings zsh_history .zsh_history
 ```
+
+### oh my zsh 
+
+### update错误
+cd ~/.oh-my-zsh
+git remote seturl origin https://gitee.com/mirrors/oh-my-zsh.git
+
 [从CSDN抄的-ZSH出现问题](https://blog.csdn.net/qq_28426351/article/details/51750347)
