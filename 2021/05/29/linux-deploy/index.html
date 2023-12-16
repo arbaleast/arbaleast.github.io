@@ -27,7 +27,7 @@
 <meta property="og:description" content="掉头发的事">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-29T15:08:48.000Z">
-<meta property="article:modified_time" content="2023-11-20T01:48:46.332Z">
+<meta property="article:modified_time" content="2023-12-16T02:11:20.187Z">
 <meta property="article:author" content="arbaleast">
 <meta property="article:tag" content="linux deploy">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99%E4%BB%A5%E5%8F%8Acontainer-%E6%8C%82%E5%9C%A8%E5%A4%B1%E8%B4%A5%E5%8F%AF%E4%BB%A5%E8%AF%95%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">部署时报错以及container 挂在失败可以试试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%89%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90%E7%9A%84%E7%BB%88%E7%AB%AF%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">在有管理员权限的终端执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-deploy%E7%9A%84%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%8B%93%E5%B1%95"><span class="nav-number">3.</span> <span class="nav-text">linux deploy的探索性拓展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aarch-ubuntu-system-upgrade"><span class="nav-number"></span> <span class="nav-text">aarch ubuntu system upgrade</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90%EF%BC%8C%E4%B8%AD%E7%A7%91%E5%A4%A7%E7%9A%84%E6%9C%89%E6%A0%A1%E9%AA%8C%E9%97%AE%E9%A2%98%EF%BC%88%E4%BC%B0%E8%AE%A1%E6%98%AF%E6%BA%90%E6%AF%94%E8%BE%83%E6%97%A7%E4%BA%86%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">换清华源，中科大的有校验问题（估计是源比较旧了）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD-etc-apt-source-list"><span class="nav-number">1.0.1.</span> <span class="nav-text">备份&#x2F;etc&#x2F;apt&#x2F;source.list</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2source-list%E5%86%85%E5%AE%B9"><span class="nav-number">1.0.2.</span> <span class="nav-text">替换source.list内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0ubuntu%E6%BA%90%E5%92%8C%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.0.3.</span> <span class="nav-text">更新ubuntu源和软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85update-manager-core"><span class="nav-number">2.</span> <span class="nav-text">安装update-manager-core</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7ubutnu%E5%88%B020-04"><span class="nav-number">3.</span> <span class="nav-text">升级ubutnu到20.04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5ubuntu%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">检查ubuntu版本</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99%E4%BB%A5%E5%8F%8Acontainer-%E6%8C%82%E5%9C%A8%E5%A4%B1%E8%B4%A5%E5%8F%AF%E4%BB%A5%E8%AF%95%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">部署时报错以及container 挂在失败可以试试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%89%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90%E7%9A%84%E7%BB%88%E7%AB%AF%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">在有管理员权限的终端执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-deploy%E7%9A%84%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%8B%93%E5%B1%95"><span class="nav-number">3.</span> <span class="nav-text">linux deploy的探索性拓展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aarch-ubuntu-system-upgrade"><span class="nav-number"></span> <span class="nav-text">aarch ubuntu system upgrade</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90%EF%BC%8C%E4%B8%AD%E7%A7%91%E5%A4%A7%E7%9A%84%E6%9C%89%E6%A0%A1%E9%AA%8C%E9%97%AE%E9%A2%98%EF%BC%88%E4%BC%B0%E8%AE%A1%E6%98%AF%E6%BA%90%E6%AF%94%E8%BE%83%E6%97%A7%E4%BA%86%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">换清华源，中科大的有校验问题（估计是源比较旧了）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD-etc-apt-source-list"><span class="nav-number">1.1.</span> <span class="nav-text">备份&#x2F;etc&#x2F;apt&#x2F;source.list</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2source-list%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">替换source.list内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0ubuntu%E6%BA%90%E5%92%8C%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">更新ubuntu源和软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85update-manager-core"><span class="nav-number">2.</span> <span class="nav-text">安装update-manager-core</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7ubutnu%E5%88%B020-04"><span class="nav-number">3.</span> <span class="nav-text">升级ubutnu到20.04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5ubuntu%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">检查ubuntu版本</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-20 09:48:46" itemprop="dateModified" datetime="2023-11-20T09:48:46+08:00">2023-11-20</time>
+      <time title="Modified: 2023-12-16 10:11:20" itemprop="dateModified" datetime="2023-12-16T10:11:20+08:00">2023-12-16</time>
     </span>
 
   
@@ -281,14 +281,13 @@
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="部署时报错以及container-挂在失败可以试试">部署时报错以及container 挂在失败可以试试</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## bootstrap/rootfs : do_install &amp;&amp; do_configure</span><br><span class="line">:: Installing bootstrap/rootfs ...</span><br><span class="line">Checking installation path ... done</span><br><span class="line">Making file system (ext4) ... done</span><br><span class="line">Checking file system ... done</span><br><span class="line">Mounting the container:</span><br><span class="line">/ ... mount：</span><br><span class="line">fail</span><br><span class="line">&lt;&lt;&lt; deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># bootstrap/rootfs : do_install &amp;&amp; do_configure</span></span></span><br><span class="line">:: Installing bootstrap/rootfs ...</span><br><span class="line">Checking installation path ... done</span><br><span class="line">Making file system (ext4) ... done</span><br><span class="line">Checking file system ... done</span><br><span class="line">Mounting the container:</span><br><span class="line">/ ... mount：</span><br><span class="line">fail</span><br><span class="line">&lt;&lt;&lt; deploy</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>……额，日志被顶上去了，找到一个类似的（凑合看吧）</p>
 </blockquote>
 <h3 id="在有管理员权限的终端执行命令">在有管理员权限的终端执行命令</h3>
-<pre><code>mknod /dev/loop0 b 7 0
-</code></pre>
-<p>然后再部署，搞定<br>
+<p>mknod /dev/loop0 b 7 0<br>
+然后再部署，搞定<br>
 别问为什么，我也是一脸蒙b</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/meefik/linuxdeploy/issues/1154">issues-Can’t instally anything with this #1154</a></p>
@@ -299,24 +298,20 @@
 <hr>
 <h2 id="aarch-ubuntu-system-upgrade">aarch ubuntu system upgrade</h2>
 <h3 id="换清华源，中科大的有校验问题（估计是源比较旧了）">换清华源，中科大的有校验问题（估计是源比较旧了）</h3>
-<h5 id="备份-etc-apt-source-list">备份/etc/apt/source.list</h5>
-<pre><code>sudo cp /etc/apt/source.list /etc/apt/source.list.bak
-</code></pre>
+<h4 id="备份-etc-apt-source-list">备份/etc/apt/source.list</h4>
+<p>sudo cp /etc/apt/source.list /etc/apt/source.list.bak</p>
 <h5 id="替换source-list内容">替换source.list内容</h5>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/">Ubuntu Ports 镜像使用帮助-armhf架构</a></p>
 <h5 id="更新ubuntu源和软件">更新ubuntu源和软件</h5>
-<pre><code>sudo apt update &amp;&amp; sudo apt upgrade
-</code></pre>
+<p>sudo apt update &amp;&amp; sudo apt upgrade</p>
 <hr>
 <h3 id="安装update-manager-core">安装update-manager-core</h3>
-<pre><code>sudo apt install -y update-manager-core
-</code></pre>
+<p>sudo apt install -y update-manager-core</p>
 <h3 id="升级ubutnu到20-04">升级ubutnu到20.04</h3>
-<pre><code>sudo do-release-upgrade -d
-</code></pre>
+<p>sudo do-release-upgrade -d</p>
 <h3 id="检查ubuntu版本">检查ubuntu版本</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Ubuntu 20.04.2 LTS</span><br><span class="line">Release:	20.04</span><br><span class="line">Codename:	focal</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:/home/ubuntu# lsb_release -a</span><br><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description: Ubuntu 20.04.2 LTS</span><br><span class="line">Release: 20.04</span><br><span class="line">Codename: focal</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1626603">如何升级到 Ubuntu 20.04</a><br>
 搞定！！……又得重新安装软件了</p>
 

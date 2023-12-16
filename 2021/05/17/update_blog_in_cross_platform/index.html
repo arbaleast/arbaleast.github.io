@@ -27,7 +27,7 @@
 <meta property="og:description" content="探索如何偷懒，躺床上写blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-17T00:38:20.000Z">
-<meta property="article:modified_time" content="2023-11-20T01:48:46.334Z">
+<meta property="article:modified_time" content="2023-12-16T02:13:54.037Z">
 <meta property="article:author" content="arbaleast">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">创建分支，并上传hexo源码到分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">在其他设备写blog</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF%EF%BC%8C%E5%B9%B6%E4%B8%8A%E4%BC%A0hexo%E6%BA%90%E7%A0%81%E5%88%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">创建分支，并上传hexo源码到分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%85%B6%E4%BB%96%E8%AE%BE%E5%A4%87%E5%86%99blog"><span class="nav-number">2.</span> <span class="nav-text">在其他设备写blog</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-20 09:48:46" itemprop="dateModified" datetime="2023-11-20T09:48:46+08:00">2023-11-20</time>
+      <time title="Modified: 2023-12-16 10:13:54" itemprop="dateModified" datetime="2023-12-16T10:13:54+08:00">2023-12-16</time>
     </span>
 
   
@@ -280,10 +280,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1>创建分支，并上传hexo源码到分支</h1>
+        <h2 id="创建分支，并上传hexo源码到分支">创建分支，并上传hexo源码到分支</h2>
 <p>搭建好githubpage blog 后<br>
 编辑博客配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:youname/youname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:youname/youname.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>branch 为部署github page的分支</p>
 </blockquote>
@@ -293,9 +293,9 @@ npm install hexo-deployer-git --save<br>
 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</li>
 <li>在hexo根目录下初始化git</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init                    #git 初始化</span><br><span class="line">git checkout -b blog        #新建blog分支</span><br><span class="line">git add .                   #添加所有文件到git</span><br><span class="line">git commit -m &quot;&quot;            #提交commit</span><br><span class="line">git push origin blog        #通过origin推送blog到远程仓库</span><br></pre></td></tr></table></figure>
-<h1>在其他设备写blog</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 克隆仓库到本地</span><br><span class="line">git clone -b blog https://github.com/用户名/仓库名.git &amp;&amp; cd 仓库名</span><br><span class="line"></span><br><span class="line"># 初始化仓库</span><br><span class="line">pnpm i -g hexo-cli &amp;&amp; pnpm i</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init                    #git 初始化</span><br><span class="line">git checkout -b blog        #新建blog分支</span><br><span class="line">git add .                   #添加所有文件到git</span><br><span class="line">git commit -m &quot;&quot;            #提交commit</span><br><span class="line">git push origin blog        #通过origin推送blog到远程仓库</span><br></pre></td></tr></table></figure>
+<h2 id="在其他设备写blog">在其他设备写blog</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">克隆仓库到本地</span></span><br><span class="line">git clone -b blog https://github.com/用户名/仓库名.git &amp;&amp; cd 仓库名</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">初始化仓库</span></span><br><span class="line">pnpm i -g hexo-cli &amp;&amp; pnpm i</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
