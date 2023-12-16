@@ -26,11 +26,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="不同关系下的组件通信">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1_202311261539328.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/%EF%BC%9Bvue_%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BA%BF202311271242932.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%B7%A8%E5%B1%82%E7%BA%A7%E9%80%9A%E4%BF%A1202311271702103.png">
 <meta property="article:published_time" content="2023-11-26T07:28:30.000Z">
-<meta property="article:modified_time" content="2023-11-26T09:10:17.375Z">
+<meta property="article:modified_time" content="2023-11-30T07:21:27.905Z">
 <meta property="article:author" content="arbaleast">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1_202311261539328.png">
 
 
 <link rel="canonical" href="https://arbaleast.github.io/2023/11/26/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">
@@ -168,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE-props-emit"><span class="nav-number">1.</span> <span class="nav-text">上下之间传递数据 props $emit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#props"><span class="nav-number">1.1.</span> <span class="nav-text">props</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#props%E6%A0%A1%E9%AA%8C"><span class="nav-number">1.1.1.</span> <span class="nav-text">props校验</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE-props-emit"><span class="nav-number">1.</span> <span class="nav-text">上下之间传递数据 props $emit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#props"><span class="nav-number">1.1.</span> <span class="nav-text">props</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#props%E6%A0%A1%E9%AA%8C"><span class="nav-number">1.1.1.</span> <span class="nav-text">props校验</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-todolist"><span class="nav-number">2.</span> <span class="nav-text">练习 todolist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4-%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">横向组件之间 传递数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#event-bus-%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BA%BF"><span class="nav-number">3.1.</span> <span class="nav-text">event bus 事件总线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%B1%82%E7%BA%A7-%E9%80%9A%E4%BF%A1-provide-inject"><span class="nav-number">4.</span> <span class="nav-text">跨层级 通信 provide inject</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,13 +185,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/source/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -251,9 +255,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-11-26 15:28:30 / Modified: 17:10:17" itemprop="dateCreated datePublished" datetime="2023-11-26T15:28:30+08:00">2023-11-26</time>
+      <time title="Created: 2023-11-26 15:28:30" itemprop="dateCreated datePublished" datetime="2023-11-26T15:28:30+08:00">2023-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-30 15:21:27" itemprop="dateModified" datetime="2023-11-30T15:21:27+08:00">2023-11-30</time>
     </span>
 
   
@@ -274,20 +284,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/屏幕截图</a> 2023-11-25 090748.png)</p>
-<h2 id="上下之间传递数据-props-emit">上下之间传递数据 props $emit</h2>
-<p>2.1 父传子props：</p>
-<ul>
-<li>父中给子添加属性传值</li>
-<li>子props接收</li>
-<li>使用</li>
-</ul>
-<p>2.2 子传父semit</p>
-<ul>
-<li>子$emit发送消息</li>
-<li>父中给子添加消息监听</li>
-<li>父中实现处理函数</li>
-</ul>
+        <h2 id="上下之间传递数据-props-emit">上下之间传递数据 props $emit</h2>
+<p>通过 v-bind 指令</p>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1_202311261539328.png" alt=""></p>
 <h3 id="props">props</h3>
 <p>Prop定义：组件上注册的一些自定义属性<br>
 Prop作用：向子组件传递数据<br>
@@ -301,6 +300,15 @@ Prop作用：向子组件传递数据<br>
 非空校验<br>
 默认值<br>
 自定义校验</p>
+<h2 id="练习-todolist">练习 todolist</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/arbaleast/vue_todoList">上下传递数据的todolist</a></p>
+<h2 id="横向组件之间-传递数据">横向组件之间 传递数据</h2>
+<p>简单数据使用 eventbus<br>
+复杂数据使用vuex</p>
+<h3 id="event-bus-事件总线">event bus 事件总线</h3>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/%EF%BC%9Bvue_%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BA%BF202311271242932.png" alt=""></p>
+<h2 id="跨层级-通信-provide-inject">跨层级 通信 provide inject</h2>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%B7%A8%E5%B1%82%E7%BA%A7%E9%80%9A%E4%BF%A1202311271702103.png" alt=""></p>
 
     </div>
 
@@ -356,6 +364,9 @@ Prop作用：向子组件传递数据<br>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/11/28/vue-ref/" rel="next" title="vue-ref $refs">
+                  vue-ref $refs <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

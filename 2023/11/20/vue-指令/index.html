@@ -26,10 +26,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="vue syntax">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_model%E5%8E%9F%E7%90%86_202311280837374.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%A1%A8%E5%8D%95%E5%B0%81%E8%A3%85_202311280943380.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4_202311301302404.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4_v-binding202311301403158.png">
 <meta property="article:published_time" content="2023-11-20T12:15:39.000Z">
-<meta property="article:modified_time" content="2023-11-22T03:50:22.590Z">
+<meta property="article:modified_time" content="2023-11-30T06:04:01.650Z">
 <meta property="article:author" content="arbaleast">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_model%E5%8E%9F%E7%90%86_202311280837374.png">
 
 
 <link rel="canonical" href="https://arbaleast.github.io/2023/11/20/vue-%E6%8C%87%E4%BB%A4/">
@@ -167,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-html"><span class="nav-number">1.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-show-v-if"><span class="nav-number">2.</span> <span class="nav-text">v-show &amp; v-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-else-v-else-if"><span class="nav-number">3.</span> <span class="nav-text">v-else&#x2F; v-else-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-on"><span class="nav-number">4.</span> <span class="nav-text">v-on</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E8%81%94%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">4.1.</span> <span class="nav-text">使用内联语句处理逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8methods%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">4.2.</span> <span class="nav-text">使用methods处理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-v-on%E9%80%BB%E8%BE%91%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86methods%EF%BC%8C%E5%AF%B9%E5%85%B6%E4%B8%AD%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%B9%B6%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0"><span class="nav-number">4.2.1.</span> <span class="nav-text">2.1 v-on逻辑处理部分methods，对其中函数调用并传递参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">5.</span> <span class="nav-text">v-bind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A01"><span class="nav-number">5.1.</span> <span class="nav-text">练习1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind-%E6%8B%93%E5%B1%95"><span class="nav-number">5.2.</span> <span class="nav-text">v-bind 拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class%E7%B1%BB%E5%90%8D"><span class="nav-number">5.2.1.</span> <span class="nav-text">class类名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#style%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F"><span class="nav-number">5.2.2.</span> <span class="nav-text">style行内样式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for"><span class="nav-number">6.</span> <span class="nav-text">v-for</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A02"><span class="nav-number">6.1.</span> <span class="nav-text">练习2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">7.</span> <span class="nav-text">v-model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A03%E2%80%94%E8%AE%B0%E4%BA%8B%E6%9C%AC"><span class="nav-number">7.1.</span> <span class="nav-text">练习3—记事本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model-%E4%BD%9C%E7%94%A8%E4%BA%8E%E5%85%B6%E4%BB%96%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="nav-number">7.2.</span> <span class="nav-text">v-model 作用于其他表单元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">指令修饰符</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-html"><span class="nav-number">1.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-show-v-if"><span class="nav-number">2.</span> <span class="nav-text">v-show &amp; v-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-else-v-else-if"><span class="nav-number">3.</span> <span class="nav-text">v-else&#x2F; v-else-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-on"><span class="nav-number">4.</span> <span class="nav-text">v-on</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E8%81%94%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">4.1.</span> <span class="nav-text">使用内联语句处理逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8methods%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">4.2.</span> <span class="nav-text">使用methods处理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-v-on%E9%80%BB%E8%BE%91%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86methods%EF%BC%8C%E5%AF%B9%E5%85%B6%E4%B8%AD%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%B9%B6%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0"><span class="nav-number">4.2.1.</span> <span class="nav-text">2.1 v-on逻辑处理部分methods，对其中函数调用并传递参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">5.</span> <span class="nav-text">v-bind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A01"><span class="nav-number">5.1.</span> <span class="nav-text">练习1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind-%E6%8B%93%E5%B1%95"><span class="nav-number">5.2.</span> <span class="nav-text">v-bind 拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class%E7%B1%BB%E5%90%8D"><span class="nav-number">5.2.1.</span> <span class="nav-text">class类名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#style%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F"><span class="nav-number">5.2.2.</span> <span class="nav-text">style行内样式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for"><span class="nav-number">6.</span> <span class="nav-text">v-for</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A02"><span class="nav-number">6.1.</span> <span class="nav-text">练习2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">7.</span> <span class="nav-text">v-model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A03%E2%80%94%E8%AE%B0%E4%BA%8B%E6%9C%AC"><span class="nav-number">7.1.</span> <span class="nav-text">练习3—记事本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model-%E4%BD%9C%E7%94%A8%E4%BA%8E%E5%85%B6%E4%BB%96%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="nav-number">7.2.</span> <span class="nav-text">v-model 作用于其他表单元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">指令修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model-%E8%A7%A3%E9%87%8A"><span class="nav-number">8.1.</span> <span class="nav-text">v-model 解释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E7%B1%BB%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85"><span class="nav-number">8.1.1.</span> <span class="nav-text">表单类组件封装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="nav-number">9.</span> <span class="nav-text">自定义指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-loading-%E5%B0%81%E8%A3%85"><span class="nav-number">9.1.</span> <span class="nav-text">v-loading 封装</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -180,13 +185,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/source/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -258,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-22 11:50:22" itemprop="dateModified" datetime="2023-11-22T11:50:22+08:00">2023-11-22</time>
+      <time title="Modified: 2023-11-30 14:04:01" itemprop="dateModified" datetime="2023-11-30T14:04:01+08:00">2023-11-30</time>
     </span>
 
   
@@ -346,6 +351,21 @@ v-model.number 转数字</li>
 事件.stop 阻止事件冒泡<br>
 事件.prevent 阻止默认行为</li>
 </ul>
+<h3 id="v-model-解释">v-model 解释</h3>
+<p>应用于不同元素上会对应不同的属性和事件<br>
+<img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_model%E5%8E%9F%E7%90%86_202311280837374.png" alt=""></p>
+<h4 id="表单类组件封装">表单类组件封装</h4>
+<p>1 封装<br>
+上传下：props 提供属性，v-model拆解<br>
+下传上：监听输入，传值修改</p>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%A1%A8%E5%8D%95%E5%B0%81%E8%A3%85_202311280943380.png" alt=""></p>
+<p><a href="git@github.com:arbaleast/vue_test.git">commit: 693fb9750ddd66daf617ff4b64f6b0102ad06f47</a></p>
+<h2 id="自定义指令">自定义指令</h2>
+<p>可以在main.js里面全局封装，也可以在组件中局部封装<br>
+形参el 指向当前元素，binding绑定当前元素传入参数</p>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4_202311301302404.png" alt=""></p>
+<h3 id="v-loading-封装">v-loading 封装</h3>
+<p><img src="https://raw.githubusercontent.com/arbaleast/Picbed/main/blog/vue_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4_v-binding202311301403158.png" alt=""></p>
 
     </div>
 
