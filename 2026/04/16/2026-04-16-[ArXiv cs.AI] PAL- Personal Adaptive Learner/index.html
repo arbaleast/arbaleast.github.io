@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PAL：个性化自适应学习者 | Hexo</title><meta name="author" content="arbaleast"><meta name="copyright" content="arbaleast"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="总结：PAL（个性化自适应学习者）是一种智能化学习系统，能够依据学习者的学习风格、能力水平与学习进度，动态调整学习内容、难度和方式，为每个学习者定制专属学习方案，从而有效提升学习效率与知识掌握效果，让学习过程更具针对性，适应不同学习需求，助">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAL：个性化自适应学习者">
+<meta property="og:url" content="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="总结：PAL（个性化自适应学习者）是一种智能化学习系统，能够依据学习者的学习风格、能力水平与学习进度，动态调整学习内容、难度和方式，为每个学习者定制专属学习方案，从而有效提升学习效率与知识掌握效果，让学习过程更具针对性，适应不同学习需求，助">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://arbaleast.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-04-15T20:22:10.000Z">
+<meta property="article:modified_time" content="2026-04-16T01:18:27.773Z">
+<meta property="article:author" content="arbaleast">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="ArXiv">
+<meta property="article:tag" content="cs.AI">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://arbaleast.github.io/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PAL：个性化自适应学习者",
+  "url": "https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/",
+  "image": "https://arbaleast.github.io/img/avatar.png",
+  "datePublished": "2026-04-15T20:22:10.000Z",
+  "dateModified": "2026-04-16T01:18:27.773Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "arbaleast",
+      "url": "https://arbaleast.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PAL：个性化自适应学习者',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script src="/js/darkmode-auto.js"></script><meta name="generator" content="Hexo 8.1.1"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://api.dujin.org/bing/1920.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">PAL：个性化自适应学习者</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">PAL：个性化自适应学习者</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-04-16T01:18:27.773Z" title="Updated 2026-04-16 09:18:27">2026-04-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF-AI/">技术/AI</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>3mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="研究背景">研究背景</h2>
+<p>随着人工智能（AI）在数字教育领域的广泛应用，个性化学习和学习参与度的提升成为研究的重点。然而，目前大多数基于讲座的视频学习平台仍然是静态的，学习者通常以被动的方式观看视频，完成统一的测验，并获得有限的反馈。这种固定的学习方式无法实时适应学习者的个体需求，导致学习者可能感到内容过于简单或过于困难，从而降低了学习动机和知识保留率。现有的自适应学习方法（如预测试或基于规则的调整）通常只能捕捉到学习能力的粗略指标，难以将学习者始终保持在“最佳学习区间”。因此，开发能够实时响应学习者需求的个性化学习系统成为亟待解决的关键问题。</p>
+<h2 id="研究问题">研究问题</h2>
+<p>本研究的核心问题是：如何设计一个基于AI的学习平台，能够实时分析学习者的表现，并动态调整学习内容的难度，从而实现真正的个性化和自适应学习？现有的系统在个性化方面存在局限性，无法根据学习者的实时反馈动态调整内容。因此，本研究旨在提出一种新的框架，突破传统静态个性化的限制，实现实时、个性化的学习支持。</p>
+<h2 id="方法">方法</h2>
+<p>论文提出了一个名为PAL（Personal Adaptive Learner）的AI驱动平台，通过将讲座视频转化为互动式学习体验，实现了实时的个性化学习支持。PAL的核心方法包括以下几个关键模块：</p>
+<ol>
+<li>
+<p><strong>视频到问题的数据集生成</strong>：PAL通过一个四阶段的流水线，从讲座视频和转录文本中生成带有时间戳和难度标注的问题。具体步骤包括：</p>
+<ul>
+<li><strong>转录分析器</strong>：扫描讲座转录文本，基于语言线索（如“被定义为”）或固定的句子间隔，识别出潜在的关键点。</li>
+<li><strong>上下文验证器</strong>：从视频帧中提取内容，结合OCR技术获取幻灯片文本，并使用视觉描述模型生成上下文信息。</li>
+<li><strong>问题生成器</strong>：基于上下文生成问题和答案对（Q-A对），并通过启发式规则对问题进行难度分级（简单、中等、困难）。</li>
+<li><strong>难度评估器</strong>：通过规则和语言模型对问题的难度进行标注。</li>
+</ul>
+</li>
+<li>
+<p><strong>基于混合强化学习的自适应难度调整</strong>：</p>
+<ul>
+<li>PAL通过一个混合强化学习（Hybrid RL）算法，根据学习者的实时状态（如技能水平、最近的正确率、反应时间、连胜势头等）动态调整问题的难度。</li>
+<li>奖励函数综合考虑了回答正确性、反应时间、难度进展的合理性和连胜势头等因素。</li>
+<li>使用统计先验模型（基于两参数逻辑模型）和强化学习策略结合，确保在早期阶段的稳定性，同时逐步学习个性化偏好。</li>
+</ul>
+</li>
+<li>
+<p><strong>个性化的课后总结</strong>：</p>
+<ul>
+<li>PAL在课程结束时生成个性化总结，突出学习者掌握的关键领域和需要进一步探索的内容。</li>
+<li>总结通过两个阶段生成：第一阶段利用语义搜索提取相关内容，第二阶段通过Llama 3.2模型进行上下文感知的综合总结，确保总结内容既紧凑又富有针对性。</li>
+</ul>
+</li>
+</ol>
+<h2 id="实验">实验</h2>
+<p>论文展示了PAL的一个在线演示，验证了其在实时互动和个性化反馈方面的有效性。实验结果表明，PAL能够通过动态调整问题难度，持续保持学习者的参与度，同时通过个性化总结帮助学习者巩固关键概念。PAL的模块化设计使其具备良好的可扩展性和上下文准确性，能够适应不同的学习场景。</p>
+<h2 id="结论">结论</h2>
+<p>PAL通过结合多模态内容分析和自适应决策，提出了一种创新的数字学习框架，突破了传统静态个性化的限制，实现了实时、个性化的学习支持。具体而言，PAL通过动态调整问题难度和生成个性化总结，显著提升了学习者的参与度和学习效果。论文的贡献包括：</p>
+<ol>
+<li>提出一个将讲座内容与实时互动问题相结合的平台。</li>
+<li>开发了一个混合强化学习算法，用于动态调整学习内容的难度。</li>
+<li>提供了一个在线演示，展示了PAL在个性化学习中的潜力。</li>
+</ol>
+<p>这一研究为AI驱动的教育技术提供了新的方向，展示了如何通过实时个性化支持来提高学习效果和学习体验。未来的研究可以进一步扩展PAL的功能，例如支持更多类型的学习内容或优化算法的效率。</p>
+<h2 id="原文链接">原文链接</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2604.13017v1">查看原文</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io">arbaleast</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/">https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/source/tags/AI/">AI</a><a class="post-meta__tags" href="/source/tags/%E8%AE%BA%E6%96%87/">论文</a><a class="post-meta__tags" href="/source/tags/ArXiv/">ArXiv</a><a class="post-meta__tags" href="/source/tags/cs-AI/">cs.AI</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">几何表示对CT肠造影视觉语言模型任务性能的塑造</div></div><div class="info-2"><div class="info-item-1">总结：本研究针对CT肠造影视觉语言模型，探究几何表示形式对任务性能的塑造作用。通过分析模型架构与几何表示构造，发现几何表示能显著提升模型对应任务表现，为优化视觉-语言模型在医学影像场景的应用提供新思路，推动医学影像与语言模型结合领域的创新发</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</div></div><div class="info-2"><div class="info-item-1">总结：双层延迟接受爬山算法是一种针对电动汽车容量车辆路径问题的优化算法，融合双层延迟接受机制与爬山算法特性，通过迭代优化路径规划过程，高效解决车辆路径与容量匹配的复杂问题，提升路径规划的效率与资源利用效益。</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</div></div><div class="info-2"><div class="info-item-1">总结：双层延迟接受爬山算法是一种针对电动汽车容量车辆路径问题的优化算法，融合双层延迟接受机制与爬山算法特性，通过迭代优化路径规划过程，高效解决车辆路径与容量匹配的复杂问题，提升路径规划的效率与资源利用效益。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">几何表示对CT肠造影视觉语言模型任务性能的塑造</div></div><div class="info-2"><div class="info-item-1">总结：本研究针对CT肠造影视觉语言模型，探究几何表示形式对任务性能的塑造作用。通过分析模型架构与几何表示构造，发现几何表示能显著提升模型对应任务表现，为优化视觉-语言模型在医学影像场景的应用提供新思路，推动医学影像与语言模型结合领域的创新发</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Rethinking%20On-Policy%20Distillation%20of/" title="重思大语言模型的对策略知识蒸馏：现象学、机制与方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">重思大语言模型的对策略知识蒸馏：现象学、机制与方案</div></div><div class="info-2"><div class="info-item-1">总结：该研究对大语言模型在知识蒸馏中对策略的应用展开重思，从现象学、机制与方案三方面系统分析，探索优化知识蒸馏的方法路径，为推动大语言模型在该领域发展提供理论支撑与实践方案，深化对该技术现象、机制及实施方案的理解。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Visual%20Preference%20Optimization%20with%20/" title="基于评分奖励的视觉偏好优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">基于评分奖励的视觉偏好优化</div></div><div class="info-2"><div class="info-item-1">总结：本研究提出一种基于评分奖励的视觉偏好优化方法，通过构建评分准则并利用奖励机制调整视觉偏好，从而提升视觉体验质量和优化系统运行效率，为视觉领域的偏好优化研究与实践开拓了新的思路和方向。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20stat.ML%5D%20Classical%20and%20Quantum%20Speedups%20for/" title="基于能量守恒下降法的非凸优化问题的经典与量子加速"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">基于能量守恒下降法的非凸优化问题的经典与量子加速</div></div><div class="info-2"><div class="info-item-1">总结：该研究针对非凸优化问题，提出利用能量守恒下降法实现经典与量子加速的方案，为非凸优化提供新的高效求解途径，结合经典与量子计算优势创新优化算法以提升计算效率，为复杂实际问题的优化求解提供理论支持与方法支持，有望推动经典与量子加速技术在优化</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem."><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</div></div><div class="info-2"><div class="info-item-1">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sus</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">arbaleast</div><div class="author-info-description">一个划水，摸鱼的地方</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/arbaleast" target="_blank" title="fab fa-github"><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">研究背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">研究问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E6%96%87%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">原文链接</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</a><time datetime="2026-04-16T00:05:05.000Z" title="Created 2026-04-16 08:05:05">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题">中文标题</a><time datetime="2026-04-16T00:03:04.000Z" title="Created 2026-04-16 08:03:04">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/" title="PAL：个性化自适应学习者">PAL：个性化自适应学习者</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造">几何表示对CT肠造影视觉语言模型任务性能的塑造</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div></div></body></html>

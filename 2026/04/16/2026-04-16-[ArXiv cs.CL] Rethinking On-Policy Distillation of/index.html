@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>重新思考大语言模型的按策略蒸馏：现象学、机制与配方 | Hexo</title><meta name="author" content="arbaleast"><meta name="copyright" content="arbaleast"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="总结：本文围绕大语言模型按策略蒸馏展开研究，从现象学、机制、配方三个维度重新思考该领域，系统分析相关原理与实践方案，为大语言模型蒸馏策略的优化提供新思路与参考框架，推动该领域研究向更系统化方向发展，进一步深化对该主题的理解与探索。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重新思考大语言模型的按策略蒸馏：现象学、机制与配方">
+<meta property="og:url" content="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="总结：本文围绕大语言模型按策略蒸馏展开研究，从现象学、机制、配方三个维度重新思考该领域，系统分析相关原理与实践方案，为大语言模型蒸馏策略的优化提供新思路与参考框架，推动该领域研究向更系统化方向发展，进一步深化对该主题的理解与探索。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://arbaleast.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-04-15T20:22:10.000Z">
+<meta property="article:modified_time" content="2026-04-16T01:19:32.300Z">
+<meta property="article:author" content="arbaleast">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="ArXiv">
+<meta property="article:tag" content="cs.CL">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://arbaleast.github.io/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "重新思考大语言模型的按策略蒸馏：现象学、机制与配方",
+  "url": "https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/",
+  "image": "https://arbaleast.github.io/img/avatar.png",
+  "datePublished": "2026-04-15T20:22:10.000Z",
+  "dateModified": "2026-04-16T01:19:32.300Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "arbaleast",
+      "url": "https://arbaleast.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '重新思考大语言模型的按策略蒸馏：现象学、机制与配方',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script src="/js/darkmode-auto.js"></script><meta name="generator" content="Hexo 8.1.1"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://api.dujin.org/bing/1920.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">重新思考大语言模型的按策略蒸馏：现象学、机制与配方</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">重新思考大语言模型的按策略蒸馏：现象学、机制与配方</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-04-16T01:19:32.300Z" title="Updated 2026-04-16 09:19:32">2026-04-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF-AI/">技术/AI</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>3mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="研究背景">研究背景</h2>
+<p>近年来，大语言模型（Large Language Models, LLMs）的后训练技术取得了显著进展，其中按策略蒸馏（On-Policy Distillation, OPD）成为一种核心方法。OPD通过学生模型生成自身的推理路径（rollouts），并利用教师模型的逐令牌（per-token）对数概率作为密集奖励信号，优化学生模型在实际访问状态下的行为。这种方法已被广泛应用于工业界的后训练管道中，例如 Qwen3、MiMo 和 GLM-5 等项目，并被证明是传统监督微调（Supervised Fine-Tuning, SFT）和基于奖励的强化学习（Reinforcement Learning, RL）的有效补充。然而，尽管OPD在实践中表现出色，其训练动态和机制仍然缺乏系统性的研究，同时存在显著的失败模式，例如更强的教师模型可能无法改进学生模型，而较弱的教师模型反而成功。这些现象表明，OPD的成功条件和机制需要进一步探讨。</p>
+<hr>
+<h2 id="研究问题">研究问题</h2>
+<p>本文旨在系统性地研究OPD的训练动态，回答以下关键问题：</p>
+<ol>
+<li><strong>OPD何时成功或失败？</strong> 探讨影响OPD效果的经验性模式和条件。</li>
+<li><strong>OPD为何在逐令牌层面有效？</strong> 揭示OPD在令牌分布上的机制。</li>
+<li><strong>如何挽救失败的OPD？</strong> 提出实用策略以改善OPD效果。</li>
+</ol>
+<hr>
+<h2 id="方法">方法</h2>
+<p>论文通过三个层次的分析来研究OPD的现象学、机制和改进策略：</p>
+<ol>
+<li>
+<p><strong>现象学分析（Phenomenology）</strong><br>
+通过实验证明，OPD的成功受两个关键因素的影响：</p>
+<ul>
+<li><strong>思维模式一致性</strong>：学生模型和教师模型需要在思维模式上保持一致，例如在高概率令牌分布上的重叠比例较高。如果两者的初始重叠较低，即使教师模型在基准测试中表现更好，训练也难以弥合这种差距。</li>
+<li><strong>高分≠新知识</strong>：即使教师模型得分更高，也必须提供学生模型尚未掌握的新能力。当学生和教师模型基于相同的数据和训练配方时，它们可能收敛到相似的分布，这使得教师模型无法提供有意义的可转移信号。</li>
+</ul>
+</li>
+<li>
+<p><strong>机制分析（Mechanism）</strong><br>
+在逐令牌层面，成功的OPD表现出以下特征：</p>
+<ul>
+<li>学生和教师模型的分布在学生访问的状态下逐渐趋于一致。</li>
+<li>高概率令牌的重叠比例从初始的72%逐步上升到91%，并且两者的熵差逐渐缩小。</li>
+<li>高概率令牌的共享集合集中了97%-99%的联合概率质量。</li>
+<li>实验进一步表明，仅利用重叠令牌进行监督即可达到完整令牌集合的性能，验证了重叠令牌是OPD梯度信号的主要来源。</li>
+</ul>
+</li>
+<li>
+<p><strong>改进策略（Recipe）</strong><br>
+针对失败的OPD配置，提出了两种实用的恢复策略：</p>
+<ul>
+<li><strong>离策略冷启动（Off-Policy Cold Start）</strong>：在OPD之前，先通过教师生成的推理路径进行监督微调（SFT），以提高初始重叠比例，弥合思维模式差距。</li>
+<li><strong>教师对齐的提示选择（Teacher-Aligned Prompt Selection）</strong>：从教师模型的后训练数据中选择提示，以加强高概率令牌上的对齐。然而，这种方法可能导致学生模型的整体性能下降。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="实验">实验</h2>
+<p>论文通过一系列实验验证了上述分析和策略：</p>
+<ol>
+<li>
+<p><strong>反向蒸馏实验（Reverse Distillation）</strong><br>
+研究发现，即使教师模型（如DS-7B）在规模和性能上优于学生模型（如DS-1.5B），如果两者的思维模式不一致，OPD可能完全失败。相反，较弱的教师模型（如JustRL-1.5B）在思维模式一致的情况下能够成功提升学生模型性能。</p>
+</li>
+<li>
+<p><strong>逐令牌机制验证</strong><br>
+实验显示，成功的OPD训练过程中，学生和教师模型在高概率令牌上的分布逐渐趋于一致，而失败的训练则表现为重叠比例停滞不前且熵差始终较大。</p>
+</li>
+<li>
+<p><strong>策略效果评估</strong><br>
+离策略冷启动显著提高了初始重叠比例，从而改善了后续OPD的效果；教师对齐的提示选择则有效增强了高概率令牌上的对齐，但需要权衡整体性能。</p>
+</li>
+</ol>
+<hr>
+<h2 id="结论">结论</h2>
+<p>本文通过系统的现象学和机制分析，揭示了OPD成功的两个关键条件：思维模式一致性和教师模型提供的新知识能力。此外，逐令牌机制表明，高概率令牌的重叠是OPD梯度信号的主要来源。基于这些发现，提出的离策略冷启动和教师对齐的提示选择策略有效改善了OPD的效果。然而，研究也指出，OPD在长时间跨度上的可扩展性仍需进一步探讨。本文的研究为理解和优化OPD提供了重要的理论基础和实践指导。</p>
+<h2 id="原文链接">原文链接</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2604.13016v1">查看原文</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io">arbaleast</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/">https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/source/tags/AI/">AI</a><a class="post-meta__tags" href="/source/tags/%E8%AE%BA%E6%96%87/">论文</a><a class="post-meta__tags" href="/source/tags/ArXiv/">ArXiv</a><a class="post-meta__tags" href="/source/tags/cs-CL/">cs.CL</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.LG%5D%20CLAD-%20Efficient%20Log%20Anomaly%20Detectio/" title="CLAD：基于压缩表示的直接高效日志异常检测"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">CLAD：基于压缩表示的直接高效日志异常检测</div></div><div class="info-2"><div class="info-item-1">总结：CLAD是一种基于压缩表示的直接高效日志异常检测方法，通过对日志数据做压缩表示处理，直接且高效地识别异常日志，在日志系统异常检测领域展现出良好性能与效率，为日志异常检测提供了一种新的有效手段，助力提升检测准确性与效率。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20PolicyLLM-%20Towards%20Excellent%20Compreh/" title="PolicyLLM：推动大型语言模型对公共政策的优秀理解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">PolicyLLM：推动大型语言模型对公共政策的优秀理解</div></div><div class="info-2"><div class="info-item-1">总结：大型语言模型（LLM）正广泛融入现实决策场景，公共政策领域是其核心应用方向。PolicyLLM研究聚焦于推动大语言模型对公共政策的优秀理解，以提升模型在政策制定、决策支持等场景的应用效能，为公共治理现代化提供智能支持，助力公共政策优化</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">中文标题</div></div><div class="info-2"><div class="info-item-1">场景批评家：3D室内场景合成的符号化评估器
+总结内容：   研究问题：大语言模型（LLM）和视觉语言模型（VLM）虽能通过布局、场景图等中间结构生成室内场景，但当前评估仍依赖LLM或VLM对渲染视图打分，此类评估易受视角、提示词表述、幻觉</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20PolicyLLM-%20Towards%20Excellent%20Compreh/" title="PolicyLLM：推动大型语言模型对公共政策的优秀理解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">PolicyLLM：推动大型语言模型对公共政策的优秀理解</div></div><div class="info-2"><div class="info-item-1">总结：大型语言模型（LLM）正广泛融入现实决策场景，公共政策领域是其核心应用方向。PolicyLLM研究聚焦于推动大语言模型对公共政策的优秀理解，以提升模型在政策制定、决策支持等场景的应用效能，为公共治理现代化提供智能支持，助力公共政策优化</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20One%20Token%20Away%20from%20Collapse-%20The%20Fr/" title="一 token 之遥的崩溃：指令微调助手的脆弱性"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">一 token 之遥的崩溃：指令微调助手的脆弱性</div></div><div class="info-2"><div class="info-item-1">总结：指令微调的大型语言模型可生成有帮助、结构化的响应，但这种帮助性在面临复杂场景、边界情况等挑战时的鲁棒性较弱。研究表明，这类模型存在脆弱性，其“有帮助性”并非绝对稳定，为探究大型语言模型的行为稳定性提供了新视角。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem."><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</div></div><div class="info-2"><div class="info-item-1">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sus</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Rethinking%20On-Policy%20Distillation%20of/" title="重思大语言模型的对策略知识蒸馏：现象学、机制与方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">重思大语言模型的对策略知识蒸馏：现象学、机制与方案</div></div><div class="info-2"><div class="info-item-1">总结：该研究对大语言模型在知识蒸馏中对策略的应用展开重思，从现象学、机制与方案三方面系统分析，探索优化知识蒸馏的方法路径，为推动大语言模型在该领域发展提供理论支撑与实践方案，深化对该技术现象、机制及实施方案的理解。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.LG%5D%20Lightning%20OPD-%20Efficient%20Post-Traini/" title="Lighting OPD：大推理模型高效后训练与离线策略蒸馏"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">Lighting OPD：大推理模型高效后训练与离线策略蒸馏</div></div><div class="info-2"><div class="info-item-1">总结：策略蒸馏（OPD）是大语言模型高效后训练的范式，但标准OPD需持续使用在线教师推理服务器以产生大量基础设施开销。本研究探究离线策略蒸馏方法，旨在优化大推理模型后训练流程，减少对在线服务器的依赖，提升训练效率与资源利用，为大语言模型后训</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">arbaleast</div><div class="author-info-description">一个划水，摸鱼的地方</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/arbaleast" target="_blank" title="fab fa-github"><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">研究背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">研究问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E6%96%87%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">原文链接</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</a><time datetime="2026-04-16T00:05:05.000Z" title="Created 2026-04-16 08:05:05">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题">中文标题</a><time datetime="2026-04-16T00:03:04.000Z" title="Created 2026-04-16 08:03:04">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/" title="PAL：个性化自适应学习者">PAL：个性化自适应学习者</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造">几何表示对CT肠造影视觉语言模型任务性能的塑造</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div></div></body></html>

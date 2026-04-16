@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>FTP 折腾 | Hexo</title><meta name="author" content="arbaleast"><meta name="copyright" content="arbaleast"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="想看看ftp能干什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FTP 折腾">
+<meta property="og:url" content="https://arbaleast.github.io/2021/12/16/about-FTP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="想看看ftp能干什么">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://arbaleast.github.io/img/avatar.png">
+<meta property="article:published_time" content="2021-12-16T12:45:45.000Z">
+<meta property="article:modified_time" content="2026-04-06T04:40:44.362Z">
+<meta property="article:author" content="arbaleast">
+<meta property="article:tag" content="FTP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://arbaleast.github.io/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FTP 折腾",
+  "url": "https://arbaleast.github.io/2021/12/16/about-FTP/",
+  "image": "https://arbaleast.github.io/img/avatar.png",
+  "datePublished": "2021-12-16T12:45:45.000Z",
+  "dateModified": "2026-04-06T04:40:44.362Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "arbaleast",
+      "url": "https://arbaleast.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://arbaleast.github.io/2021/12/16/about-FTP/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'FTP 折腾',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script src="/js/darkmode-auto.js"></script><meta name="generator" content="Hexo 8.1.1"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://api.dujin.org/bing/1920.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">FTP 折腾</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">FTP 折腾</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-16T12:45:45.000Z" title="Created 2021-12-16 20:45:45">2021-12-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-04-06T04:40:44.362Z" title="Updated 2026-04-06 12:40:44">2026-04-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>4mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="vsftp">vsftp</h2>
+<p>在ubutnu中安装·</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install vsftpd</span><br></pre></td></tr></table></figure>
+<p>检查端口是否打开</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnl               <span class="comment">#或者 ps -ef | grep ftp</span></span><br></pre></td></tr></table></figure>
+<p>检查FTP服务是否开启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service vsftpd status</span><br></pre></td></tr></table></figure>
+<p>FTP操作命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service vsftpd start | stop | restart | status</span><br><span class="line">systemctl start | stop | restart | status vsftpd</span><br><span class="line">/etc/init.d/vsftpd start | stop | restart | status | reload</span><br></pre></td></tr></table></figure>
+<p>修改FTP配置文件 位置：/etc/vsftpd.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置登录FTP欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基本配置1</span></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 基本配置2</span></span><br><span class="line">local_umask=022 　　<span class="comment"># FTP上本地的文件权限，默认是077。此时umask为022，则目录为777-022=755，文件为666-022=644。</span></span><br><span class="line">dirmessage_enable=YES     <span class="comment"># 进入文件夹允许</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用20号端口作为数据传送的端口</span></span><br><span class="line">data_connection_timeout=120 <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志配置</span></span><br><span class="line">utf8_filesystem=YES <span class="comment"># vsftpd使用utf8文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志</span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义</span></span><br><span class="line">local_root=/share/vsftpd    <span class="comment"># 设置自定义的ftp根目录的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读写权限</span></span><br><span class="line">allow_writeable_chroot=YES  <span class="comment"># 解决&quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向FTP服务器写入权限</span></span><br><span class="line">chown_uploads=YES   <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever  <span class="comment"># 设置想要改变的上传文件的属主，可设为ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES 　<span class="comment"># 允许服务器以ASCII方式传输数据,但引起&quot;SIZE /big/file&quot;方式的DoS攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line">deny_email_enable=YES   　<span class="comment"># 黑名单设置。如果很讨厌某些email address，可以取消他的登录权限</span></span><br><span class="line">banned_email_file=/etc/vsftpd.banned_emails</span><br><span class="line"></span><br><span class="line"><span class="comment"># FTP限制最大连接数和传输速率，进行资源控制，避免负担过大而运行异常</span></span><br><span class="line">max_client=50   <span class="comment"># FTP服务器的所有客户端最大连接数不超过50个</span></span><br><span class="line">max_per_ip=5    <span class="comment"># 同一IP地址的FTP客户机与FTP服务器建立的最大连接数不超过5个</span></span><br><span class="line">local_max_rate=100000   <span class="comment"># FTP服务器的本地用户最大传输速率设置为100KB/s.</span></span><br><span class="line">anon_max_rate=50000 <span class="comment"># FTP服务器的匿名用户最大传输速率设置为50KB/s.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 权限设置</span></span><br><span class="line"><span class="comment">#是否启动userlist为禁止模式，YES表示在userlist中的用户禁止登录ftp（黑名单），NO表示黑名单失效</span></span><br><span class="line">userlist_deny=NO</span><br><span class="line">userlist_enable=NO  <span class="comment"># 是否启动限制用户的名单为允许模式，上面的YES限制了所有用户，可以用这个名单作为白名单，作为例外允许访问ftp根目录以外</span></span><br><span class="line">userlist_file=/etc/vsftpd.user_list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用cd命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用chroot_list_file配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到home目录的上级目录。</span></span><br></pre></td></tr></table></figure>
+<p>通过搭配能实现以下几种效果</p>
+<ul>
+<li>当<strong>chroot_list_enable=YES，chroot_local_user=YES时</strong>，在/etc/vsftpd.chroot_list文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
+<li>当<strong>chroot_list_enable=YES，chroot_local_user=NO</strong>时，在/etc/vsftpd.chroot_list文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
+<li>当<strong>chroot_list_enable=NO，chroot_local_user=YES</strong>时，所有的用户均不能切换到其他目录。</li>
+<li>当<strong>chroot_list_enable=NO，chroot_local_user=NO</strong>时，所有的用户均可以切换到其他目录。</li>
+</ul>
+<h2 id="修改默认端口">修改默认端口</h2>
+<p>默认FTP服务器端口号是21，出于安全目的，有时需修改默认端口号，编辑**/etc/vsftpd.conf**文件。</p>
+<p><code>listen_port=6666</code></p>
+<h2 id="设置FTP目录">设置FTP目录</h2>
+<p>创建FTP根目录，需与配置文件一致。</p>
+<p><code>$ mkdir -p /share/vsftpd</code></p>
+<h2 id="创建FTP用户">创建FTP用户</h2>
+<p>需要创建用户组 gourpadd ftpgroup</p>
+<p><code>$ sudo useradd -g ftpgroup -d /share/vsftpd -m</code> ftpuser</p>
+<p>命令参数说明： - g：用户所在的组  - d：指定FTP目录  - m：不建立默认家目录</p>
+<p>设置FTP用户密码</p>
+<p><code>$ sudo passwd vsftpd</code></p>
+<p>编辑/etc/vsftpd.chroot_list文件，将vsftpd的帐户名添加进去，保存退出,并重启FTP服务。</p>
+<h2 id="卸载">卸载</h2>
+<p>当我们不需要FTP时，可以卸载FTP并删除FTP用户。</p>
+<p>`$ sudo apt-get remove --purge vsftpd    # purge 选项表示彻底删除改软件和相关文件</p>
+<p>删除FTP用户</p>
+<p><code>$ sudo userdel vsftpd</code></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/71163407">Ubuntu中FTP安装配置及基本概念</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io">arbaleast</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io/2021/12/16/about-FTP/">https://arbaleast.github.io/2021/12/16/about-FTP/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/source/tags/FTP/">FTP</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2021/12/16/Openwrt/" title="Openwrt"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Openwrt</div></div><div class="info-2"><div class="info-item-1">折腾路由器</div></div></div></a><a class="pagination-related" href="/2021/12/16/CVE-2016-5195-Ditry-COW/" title="CVE-2016-5195 Ditry-COW"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">CVE-2016-5195 Ditry-COW</div></div><div class="info-2"><div class="info-item-1">为了获取Android TV的root权限</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">arbaleast</div><div class="author-info-description">一个划水，摸鱼的地方</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/arbaleast" target="_blank" title="fab fa-github"><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vsftp"><span class="toc-number">1.</span> <span class="toc-text">vsftp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text">修改默认端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEFTP%E7%9B%AE%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">设置FTP目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAFTP%E7%94%A8%E6%88%B7"><span class="toc-number">4.</span> <span class="toc-text">创建FTP用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD"><span class="toc-number">5.</span> <span class="toc-text">卸载</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</a><time datetime="2026-04-16T00:05:05.000Z" title="Created 2026-04-16 08:05:05">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题">中文标题</a><time datetime="2026-04-16T00:03:04.000Z" title="Created 2026-04-16 08:03:04">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/" title="PAL：个性化自适应学习者">PAL：个性化自适应学习者</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造">几何表示对CT肠造影视觉语言模型任务性能的塑造</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div></div></body></html>

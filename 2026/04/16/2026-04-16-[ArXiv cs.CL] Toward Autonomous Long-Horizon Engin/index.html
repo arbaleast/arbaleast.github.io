@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem. | Hexo</title><meta name="author" content="arbaleast"><meta name="copyright" content="arbaleast"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.">
+<meta property="og:url" content="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sus">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://arbaleast.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-04-16T00:05:05.000Z">
+<meta property="article:modified_time" content="2026-04-16T01:19:55.792Z">
+<meta property="article:author" content="arbaleast">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="ArXiv">
+<meta property="article:tag" content="cs.CL">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://arbaleast.github.io/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.",
+  "url": "https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/",
+  "image": "https://arbaleast.github.io/img/avatar.png",
+  "datePublished": "2026-04-16T00:05:05.000Z",
+  "dateModified": "2026-04-16T01:19:55.792Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "arbaleast",
+      "url": "https://arbaleast.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script src="/js/darkmode-auto.js"></script><meta name="generator" content="Hexo 8.1.1"><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://api.dujin.org/bing/1920.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-04-16T00:05:05.000Z" title="Created 2026-04-16 08:05:05">2026-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-04-16T01:19:55.792Z" title="Updated 2026-04-16 09:19:55">2026-04-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF-AI/">技术/AI</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>4mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="研究背景">研究背景</h2>
+<p>随着人工智能（AI）研究的快速发展，自动化科学研究成为了AI领域的重要目标之一。自动化研究不仅能够加速科学发现的进程，还能提高研究的可重复性并扩大高质量研究工作流程的可及性。在机器学习（ML）领域，自动化研究的潜力尤其显著。然而，尽管近年来基于大语言模型的研究代理在文献综述、实验设计和科学写作等任务中取得了显著进展，长时间跨度的ML研究工程仍然面临诸多挑战。这种工程需要代理能够在数小时甚至数天内，完成从任务理解、环境搭建、实现、实验到调试的整个技术工作流程。</p>
+<p>长时间跨度的ML研究工程的难点在于，不仅需要解决每个阶段的技术问题，还需要将这些阶段整合为一个连贯的流程，确保项目状态的持续性。早期决策（如任务解释、环境设置、数据准备或实现）可能会在数小时后才显现出问题，这些问题的根源往往难以追溯。因此，如何在异构阶段之间协调工作并保持项目状态的连贯性，成为了这一领域的核心挑战。</p>
+<h2 id="研究问题">研究问题</h2>
+<p>现有的研究代理在长时间跨度的ML研究工程中表现有限。例如，在PaperBench这一要求从零开始复现论文的严苛基准测试中，当前最优的代理仅能达到21%的复现评分，而顶尖的ML博士生在48小时内可以达到41%的评分。这表明，现有系统在处理长时间跨度的复杂工程任务时，仍然存在显著的性能差距。论文提出的核心问题是：如何设计一个系统，使其能够在长时间跨度内，协调异构任务并保持项目状态的持续性，从而显著提升ML研究工程的自动化水平。</p>
+<h2 id="方法">方法</h2>
+<p>为了解决上述问题，论文提出了一个名为<strong>AiScientist</strong>的系统。AiScientist基于一个简单的设计原则：<strong>长时间跨度的高效性能需要结构化的任务编排和持久的状态连续性</strong>。具体来说，AiScientist的设计包括以下两个核心组件：</p>
+<ol>
+<li>
+<p><strong>分层式任务编排（Hierarchical Orchestration）</strong><br>
+AiScientist采用分层式的研究团队架构，其中顶层的“编排器”（Orchestrator）负责阶段级别的规划，并将任务迭代地分配给专门的子代理。这些子代理分别负责论文理解、任务优先级排序、实现和实验等具体任务。在需要时，这些子代理还可以进一步生成专门的子任务代理。</p>
+</li>
+<li>
+<p><strong>基于文件总线的共享工作空间（File-as-Bus Workspace）</strong><br>
+为了支持状态的持续性，AiScientist引入了一种基于文件总线的协议（File-as-Bus protocol）。在这一设计中，代理通过权限范围明确的共享工作空间中的文件进行协调，而不是依赖于对话式的状态传递。这种方法确保了项目状态能够以持久的工件形式（如分析结果、计划、代码和实验数据）保存下来，使后续的决策能够基于完整的上下文进行。</p>
+</li>
+</ol>
+<p>这种设计的核心思想是实现“薄控制厚状态”（thin control over thick state）：顶层编排器通过简明的阶段总结和紧凑的工作空间映射保持轻量化控制，而详细的分析、代码和实验记录则作为持久的工件保存下来，供后续的代理反复使用。</p>
+<h2 id="实验">实验</h2>
+<p>为了验证AiScientist的有效性，作者在两个互补的基准测试中进行了实验：</p>
+<ol>
+<li>
+<p><strong>PaperBench</strong><br>
+PaperBench是一项要求从零开始复现论文的严苛基准测试。实验结果显示，AiScientist在该基准测试中的平均得分为33.73，比最优基线高出11.15分，并缩小了与人类（顶尖ML博士生）41%复现评分的差距。</p>
+</li>
+<li>
+<p><strong>MLE-Bench Lite</strong><br>
+MLE-Bench Lite是一项针对机器学习工程的基准测试，评估代理在完成任务时获得奖牌的比例（Any Medal%）。AiScientist在该测试中达到了81.82%的Any Medal%，比最优基线高出11.37个百分点。</p>
+</li>
+</ol>
+<p>此外，论文还通过消融实验分析了系统的关键设计因素。结果表明，<strong>File-as-Bus协议是性能提升的关键驱动因素</strong>：移除该协议后，PaperBench的得分下降了6.41分，MLE-Bench Lite的Any Medal%下降了31.82个百分点。同时，与更简单的代理组织方式相比，分层式任务编排也在长时间跨度性能中起到了重要作用。</p>
+<h2 id="结论">结论</h2>
+<p>论文提出的AiScientist系统通过分层式任务编排和基于文件总线的共享工作空间设计，显著提升了长时间跨度ML研究工程的自动化性能。实验结果表明，该系统在PaperBench和MLE-Bench Lite两个基准测试中均显著优于现有最优基线，验证了其在复杂工程任务中的有效性。此外，消融实验进一步证明，持久的状态连续性和分层式任务编排是实现高效长时间跨度性能的关键。</p>
+<p>总体而言，研究表明，长时间跨度的ML研究工程不仅是一个局部推理问题，更是一个需要协调专门化工作并维护持久项目状态的系统性问题。AiScientist的成功为未来的自动化科学研究系统设计提供了重要的参考和启示。</p>
+<h2 id="原文链接">原文链接</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2604.13018v1">查看原文</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io">arbaleast</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/">https://arbaleast.github.io/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/source/tags/AI/">AI</a><a class="post-meta__tags" href="/source/tags/%E8%AE%BA%E6%96%87/">论文</a><a class="post-meta__tags" href="/source/tags/ArXiv/">ArXiv</a><a class="post-meta__tags" href="/source/tags/cs-CL/">cs.CL</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">中文标题</div></div><div class="info-2"><div class="info-item-1">场景批评家：3D室内场景合成的符号化评估器
+总结内容：   研究问题：大语言模型（LLM）和视觉语言模型（VLM）虽能通过布局、场景图等中间结构生成室内场景，但当前评估仍依赖LLM或VLM对渲染视图打分，此类评估易受视角、提示词表述、幻觉</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Rethinking%20On-Policy%20Distillation%20of/" title="重新思考大语言模型的按策略蒸馏：现象学、机制与配方"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">重新思考大语言模型的按策略蒸馏：现象学、机制与配方</div></div><div class="info-2"><div class="info-item-1">总结：本文围绕大语言模型按策略蒸馏展开研究，从现象学、机制、配方三个维度重新思考该领域，系统分析相关原理与实践方案，为大语言模型蒸馏策略的优化提供新思路与参考框架，推动该领域研究向更系统化方向发展，进一步深化对该主题的理解与探索。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20One%20Token%20Away%20from%20Collapse-%20The%20Fr/" title="一 token 之遥的崩溃：指令微调助手的脆弱性"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">一 token 之遥的崩溃：指令微调助手的脆弱性</div></div><div class="info-2"><div class="info-item-1">总结：指令微调的大型语言模型可生成有帮助、结构化的响应，但这种帮助性在面临复杂场景、边界情况等挑战时的鲁棒性较弱。研究表明，这类模型存在脆弱性，其“有帮助性”并非绝对稳定，为探究大型语言模型的行为稳定性提供了新视角。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">中文标题</div></div><div class="info-2"><div class="info-item-1">场景批评家：3D室内场景合成的符号化评估器
+总结内容：   研究问题：大语言模型（LLM）和视觉语言模型（VLM）虽能通过布局、场景图等中间结构生成室内场景，但当前评估仍依赖LLM或VLM对渲染视图打分，此类评估易受视角、提示词表述、幻觉</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20PolicyLLM-%20Towards%20Excellent%20Compreh/" title="PolicyLLM：推动大型语言模型对公共政策的优秀理解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">PolicyLLM：推动大型语言模型对公共政策的优秀理解</div></div><div class="info-2"><div class="info-item-1">总结：大型语言模型（LLM）正广泛融入现实决策场景，公共政策领域是其核心应用方向。PolicyLLM研究聚焦于推动大语言模型对公共政策的优秀理解，以提升模型在政策制定、决策支持等场景的应用效能，为公共治理现代化提供智能支持，助力公共政策优化</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.LG%5D%20Rethinking%20On-Policy%20Distillation%20of/" title="重新思考大规模语言模型在线策略蒸馏：现象学、机制与配方"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">重新思考大规模语言模型在线策略蒸馏：现象学、机制与配方</div></div><div class="info-2"><div class="info-item-1">总结：本文针对大规模语言模型的在线策略蒸馏问题展开重新思考，系统分析其现象学特征、内在机制，并结合研究总结出相关方法，为该领域的理论与实践发展提供新视角与指导。</div></div></div></a><a class="pagination-related" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Visual%20Preference%20Optimization%20with%20/" title="基于评分奖励的视觉偏好优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-16</div><div class="info-item-2">基于评分奖励的视觉偏好优化</div></div><div class="info-2"><div class="info-item-1">总结：本研究提出一种基于评分奖励的视觉偏好优化方法，通过构建评分准则并利用奖励机制调整视觉偏好，从而提升视觉体验质量和优化系统运行效率，为视觉领域的偏好优化研究与实践开拓了新的思路和方向。</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">arbaleast</div><div class="author-info-description">一个划水，摸鱼的地方</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">57</div></a><a href="/source/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/arbaleast" target="_blank" title="fab fa-github"><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">研究背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">研究问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E6%96%87%E9%93%BE%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">原文链接</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20Toward%20Autonomous%20Long-Horizon%20Engin/" title="Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.">Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.</a><time datetime="2026-04-16T00:05:05.000Z" title="Created 2026-04-16 08:05:05">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.CL%5D%20SceneCritic-%20A%20Symbolic%20Evaluator%20fo/" title="中文标题">中文标题</a><time datetime="2026-04-16T00:03:04.000Z" title="Created 2026-04-16 08:03:04">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Bilevel%20Late%20Acceptance%20Hill%20Climbin/" title="双层延迟接受爬山算法求解电动汽车容量车辆路径问题">双层延迟接受爬山算法求解电动汽车容量车辆路径问题</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20PAL-%20Personal%20Adaptive%20Learner/" title="PAL：个性化自适应学习者">PAL：个性化自适应学习者</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/16/2026-04-16-%5BArXiv%20cs.AI%5D%20Representation%20geometry%20shapes%20task%20/" title="几何表示对CT肠造影视觉语言模型任务性能的塑造">几何表示对CT肠造影视觉语言模型任务性能的塑造</a><time datetime="2026-04-15T20:22:10.000Z" title="Created 2026-04-16 04:22:10">2026-04-16</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div></div></body></html>
